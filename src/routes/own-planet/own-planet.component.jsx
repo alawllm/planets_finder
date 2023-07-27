@@ -1,22 +1,32 @@
 import { useState, useEffect } from "react";
 
 const OwnPlanet = () => {
-    const [searchField, setSearchField] = useState('')
-    // useEffect(()=> {
-    //     fetch...
-    // }, [searchField])
+    const [planetName, setPlanetName] = useState('')
+    // useEffect(() => {
+    //     //async function has to be wrapped into a non-async function
+    //     async function getPlanet() {
+    //         const response = await fetch(PLANET_API_URL);
+    //         const jsonResponse = await response.json();
+    //         const planet = jsonResponse.name;
 
-    // const onSearchChange = (event) => {
+    //     }
+    //     getPlanet();
+    // }, [planetName])
 
-    // }
+    //on submit update the planet name
+    const handleChange = (evt) => {
+        setPlanetName(evt.target.value)
+    }
+
+    const handleSubmit = () => {
+        console.log(planetName)
+    }
     return (
         <>
             <h1>Let's find your favorite planet</h1>
             {/* form for sending data to the API  */}
-            <form action="">
-                <input type="text" name="searchField" value="searchField" placeholder="planet name" />
-                <button >Submit</button>
-            </form>
+            <input type="text" name="planetName" value={planetName} onChange={handleChange} placeholder="planet name" />
+            <button onClick={handleSubmit}>Submit</button>
         </>
     )
 }
