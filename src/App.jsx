@@ -17,7 +17,6 @@ const App = () => {
         <Route path='/own-planet' element={<OwnPlanet />} />
         <Route path='/info-page' element={<InfoPage />} />
       </Route>
-
     </Routes>
   )
 }
