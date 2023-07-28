@@ -1,0 +1,29 @@
+.planet-input-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgb(45, 45, 120);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .planet-input-container {
+        width: 450px;
+        height: 450px;
+        /* ... other styles for smaller screens ... */
+    }
+}
+
+
+@media (max-width: 400px) {
+    .planet-input-container {
+        width: 350px;
+        height: 350px;
+        /* ... other styles for smaller screens ... */
+    }
+}

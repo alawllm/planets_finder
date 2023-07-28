@@ -7,7 +7,7 @@ const Navigation = () => {
         <>
             <div className='navigation'>
                 <Link className='logo-container' to='/'>
-                    Home Logo
+                    Home
                 </Link>
 
                 <div className='nav-links-container'>
