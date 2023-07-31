@@ -1,3 +1,14 @@
+# Planets App
+
+This is a React refactor of an App that fetches information about different planets from an API and displays it.
+
+(...) more information to follow
+
+# Useful Resources
+
+- [How to consume Rest APIs in React](https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/)
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

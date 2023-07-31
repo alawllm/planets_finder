@@ -1,36 +1,53 @@
 import { useState, useEffect } from "react";
 import './own-planet.styles.css'
+import axios from "axios";
 
 const OwnPlanet = () => {
     const [planetName, setPlanetName] = useState('')
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [planetData, setPlanetData] = useState({})
     useEffect(() => {
-        //async function has to be wrapped into a non-async function
-        //     async function getPlanet() {
-        //         const response = await fetch(PLANET_API_URL);
-        //         const jsonResponse = await response.json();
-        //         const planet = jsonResponse.name;
+        const fetchData = async () => {
+            const options = {
+                method: 'GET',
+                url: 'https://planets-by-api-ninjas.p.rapidapi.com/v1/planets',
+                params: { name: planetName.toLowerCase() },
+                headers: {
+                    'X-RapidAPI-Key': import.meta.env.VITE_APP_API_KEY,
+                    'X-RapidAPI-Host': 'planets-by-api-ninjas.p.rapidapi.com'
+                }
+            };
 
-        //     }
-        //     getPlanet();
-        // }, [planetName])
-
-        const handleChange = (evt) => {
-            setPlanetName(evt.target.value)
+            try {
+                const response = await axios.request(options);
+                console.log(response.data)
+                setPlanetData(response.data)
+            } catch (error) {
+                console.error(error);
+            }
         }
+        fetchData();
+        setIsSubmitted(false)
+    }, [isSubmitted])
 
-        const handleSubmit = () => {
-            console.log(planetName)
-        }
-        return (
-            <>
-                <div className="planet-input-container">
-                    <h1>Let's find your favorite planet</h1>
-                    {/* form for sending data to the API  */}
-                    <input type="text" name="planetName" value={planetName} onChange={handleChange} placeholder="planet name" />
-                    <button onClick={handleSubmit}>Submit</button>
-                </div>
-            </>
-        )
+    const handleChange = (evt) => {
+        setPlanetName(evt.target.value)
     }
 
-export default OwnPlanet;
+    const handleSubmit = () => {
+        setIsSubmitted(true)
+    }
+
+    return (
+        <>
+            <div className="planet-input-container">
+                <h1>Let's find your favorite planet</h1>
+                {/* form for sending data to the API  */}
+                <input type="text" name="planetName" value={planetName} onChange={handleChange} placeholder="planet name" />
+                <button onClick={handleSubmit}>Submit</button>
+            </div>
+        </>
+    )
+}
+
+export default OwnPlanet
