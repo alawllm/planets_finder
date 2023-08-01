@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const OwnPlanet = () => {
     const [planetName, setPlanetName] = useState('')
     const [isLoading, setIsLoading] = useState(false)
-    const [planetData, setPlanetData] = useState({})
 
     const navigateTo = useNavigate();
 
@@ -14,8 +13,10 @@ const OwnPlanet = () => {
         setPlanetName(evt.target.value)
     }
 
-    const handleSubmit = async () => {
-        setIsLoading(true)
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!planetName) return;
+        setIsLoading(true);
 
         const options = {
             method: 'GET',
@@ -27,28 +28,21 @@ const OwnPlanet = () => {
             }
         };
 
-        try {
-            const response = await axios.request(options);
-            const infoObject = response.data[0]
-            console.log('response', infoObject)
-            setPlanetData({
-                name: infoObject.name,
-                mass: infoObject.mass,
-                radius: infoObject.radius,
-                period: infoObject.period,
-                semi_major_axis: infoObject.semi_major_axis,
-                temperature: infoObject.temperature,
-                distance_light_year: infoObject.distance_light_year
-            })
+        async function fetchData() {
+            try {
+                const response = await axios.request(options);
+                const infoObject = response.data[0]
+                console.log('response', infoObject)
+                navigateTo('/info-page', { state: infoObject })
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setIsLoading(false)
 
-            navigateTo('/info-page', { state: planetData })
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setIsLoading(false)
-            console.log('planetData:', planetData)
-
+            }
         }
+        fetchData();
+
     }
 
     return (
