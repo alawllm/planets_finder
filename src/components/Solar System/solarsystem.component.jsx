@@ -27,10 +27,6 @@ const SolarSystem = () => {
                         </div>
                     </div>
 
-                    <div className="saturn-outline" name="saturn-outline">
-                        <div className="saturn" name="saturn"></div>
-                    </div>
-
                     <div className="mars-outline" name="mars-outline">
                         <div className="mars" name="mars"></div>
                     </div>
@@ -38,6 +34,19 @@ const SolarSystem = () => {
                     <div className="jupiter-outline" name="jupiter-outline">
                         <div className="jupiter" name="jupiter"></div>
                     </div>
+
+                    <div className="saturn-outline" name="saturn-outline">
+                        <div className="saturn" name="saturn"></div>
+                    </div>
+
+                    <div className="uranus-outline" name="uranus-outline">
+                        <div className="uranus" name="uranus"></div>
+                    </div>
+
+                    <div className="neptune-outline" name="neptune-outline">
+                        <div className="neptune" name="neptune"></div>
+                    </div>
+
                 </div>
             </div>
         </>
