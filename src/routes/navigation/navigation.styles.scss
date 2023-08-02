@@ -1,0 +1,23 @@
+.navigation {
+    top: 0;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    display: flex;
+    background-color: rgb(47, 42, 145);
+    color: white;
+
+    .nav-links-container {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        place-items: center;
+    }
+
+    .nav-link {
+        padding: 10px 15px;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+    }
+}

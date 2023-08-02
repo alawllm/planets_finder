@@ -1,6 +1,15 @@
+import './footer.styles.scss'
+
 const Footer = () => {
     return (
-        <h1>This is the footer</h1>
+        <>
+            <div className="footer-container">
+                <p>Developed in 2023 by__</p>
+                <p><a href="#">GitHub</a></p>
+                <p> <a href="#">LinkedIn</a></p>
+            </div>
+
+        </>
     )
 }
 

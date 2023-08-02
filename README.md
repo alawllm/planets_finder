@@ -6,6 +6,10 @@ The app was made with React Vite.
 
 (...) more information to follow
 
+# Styles / fonts
+
+- [Google fonts: Handjet](https://fonts.google.com/specimen/Handjet)
+
 # Useful Resources
 
 - [How to consume Rest APIs in React](https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/)

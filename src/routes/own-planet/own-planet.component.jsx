@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import './own-planet.styles.css'
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import './own-planet.styles.scss'
+
+
+//later add proper error handling of the input
 const OwnPlanet = () => {
     const [planetName, setPlanetName] = useState('')
     const [isLoading, setIsLoading] = useState(false)
@@ -36,19 +39,19 @@ const OwnPlanet = () => {
                 navigateTo('/info-page', { state: infoObject })
             } catch (error) {
                 console.error(error);
+                setIsLoading(false)
             } finally {
                 setIsLoading(false)
 
             }
         }
         fetchData();
-
     }
 
     return (
         <>
             <div className="planet-input-container">
-                <h1>Let's find your favorite planet</h1>
+                <h1 className="header-type">type in planet name</h1>
                 {isLoading && <p>Loading...</p>}
                 <input type="text" name="planetName" value={planetName} onChange={handleChange} placeholder="planet name" />
                 <button onClick={handleSubmit}>Submit</button>

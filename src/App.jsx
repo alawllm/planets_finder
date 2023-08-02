@@ -5,7 +5,7 @@ import InfoPage from './routes/Info-Page/info-page.component'
 import OwnPlanet from './routes/Own-Planet/own-planet.component'
 import Navigation from './routes/navigation/navigation.component'
 
-import './App.css'
+import './App.scss'
 
 const App = () => {
 

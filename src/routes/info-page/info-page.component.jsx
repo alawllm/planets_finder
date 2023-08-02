@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 
+import './info-page.styles.scss'
+
 const InfoPage = () => {
     let location = useLocation();
     const planetData = location.state
@@ -7,9 +9,8 @@ const InfoPage = () => {
     return (
 
         <>
-            <p>This is the Info Page</p>
-            <div>
-                <h1>planet name: {planetData.name}</h1>
+            <div className="info-container">
+                <h1> here is {planetData.name}</h1>
                 <p>planet mass: {planetData.mass}</p>
                 <p>radius: {planetData.radius}</p>
                 <p>period: {planetData.period}</p>
