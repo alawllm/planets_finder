@@ -12,22 +12,21 @@
 
 body {
   margin: 0;
-  height: 100vh;
   font-family: Handjet;
   font-size: 1.3rem;
-  box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #root {
   margin: 0;
-  height: 100vh;
-  box-sizing: border-box;
+  margin-top: 50px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
+  flex: 1;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
   background-color: rgb(7, 5, 38);
-  width: 100%;
 }

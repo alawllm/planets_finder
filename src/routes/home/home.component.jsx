@@ -10,10 +10,10 @@ const Home = () => {
         navigateTo('/info-page')
     }
     return (
-        <>
+        <div className="home-cont">
+            <h1>Your home solar system</h1>
             <SolarSystem />
-
-        </>
+        </div>
     )
 }
 
