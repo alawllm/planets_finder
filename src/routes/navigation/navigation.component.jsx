@@ -6,7 +6,6 @@ import './navigation.styles.scss'
 const Navigation = () => {
     return (
         <>
-
             <div className='navigation'>
                 <div className='nav-links-container'>
                     <Link className='nav-link' to='/'>Home</Link>
@@ -14,7 +13,6 @@ const Navigation = () => {
                 </div>
             </div>
             <Outlet />
-            <Footer />
         </>
     )
 }

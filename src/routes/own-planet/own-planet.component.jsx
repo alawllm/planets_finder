@@ -42,7 +42,6 @@ const OwnPlanet = () => {
                 setIsLoading(false)
             } finally {
                 setIsLoading(false)
-
             }
         }
         fetchData();

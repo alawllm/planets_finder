@@ -11,9 +11,8 @@ const Home = () => {
     }
     return (
         <>
-            <div className="home-cont">
-                <SolarSystem />
-            </div>
+            <SolarSystem />
+
         </>
     )
 }
