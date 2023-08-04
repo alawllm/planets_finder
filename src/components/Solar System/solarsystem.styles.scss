@@ -7,46 +7,12 @@
     height: 640px;
     width: 640px;
 
-    .sun {
+    .planet-child {
         border-radius: 50%;
         position: absolute;
-        background-color: rgb(239, 231, 176);
-        height: 120px;
-        width: 120px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         box-shadow: -4px 2px 15px #99b9b6;
+        transform: translate(-50%, -50%);
     }
-
-    .mercury-outline {
-        height: 140px;
-        width: 140px;
-
-        .mercury {
-            height: 20px;
-            width: 20px;
-            background: #db9898;
-            border-radius: 50%;
-            position: absolute;
-            left: 43%;
-            top: 42%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit2 5s linear infinite;
-        }
-    }
-
-    @keyframes orbit2 {
-        from {
-            transform: rotate(0deg)translateX(70px) rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg)translateX(70px) rotate(360deg);
-        }
-    }
-
 
     .mercury-outline,
     .venus-outline,
@@ -64,7 +30,36 @@
         transform: translate(-50%, -50%);
     }
 
-    .venus-outline {
+    .sun {
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgb(239, 231, 176);
+        height: 120px;
+        width: 120px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: -4px 2px 15px #99b9b6;
+    }
+
+    /*  .mercury-outline {
+        height: 140px;
+        width: 140px;
+
+        .mercury {
+            height: 20px;
+            width: 20px;
+            background: #db9898;
+            border-radius: 50%;
+            position: absolute;
+            left: 43%;
+            top: 42%;
+            box-shadow: -4px 2px 15px #99b9b6;
+            transform: translate(-50%, -50%);
+            animation: orbit1 5s linear infinite;
+        }
+    }
+    /* .venus-outline {
         height: 200px;
         width: 200px;
 
@@ -78,19 +73,29 @@
             top: 42%;
             box-shadow: -4px 2px 15px #99b9b6;
             transform: translate(-50%, -50%);
-            animation: orbit3 10s linear infinite;
+            animation: orbit2 10s linear infinite;
+        }*/
+
+    @keyframes orbit1 {
+        from {
+            transform: rotate(0deg)translateX(70px) rotate(0deg);
         }
 
-        @keyframes orbit3 {
-            from {
-                transform: rotate(0deg)translateX(100px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(100px) rotate(-360deg);
-            }
+        to {
+            transform: rotate(360deg)translateX(70px) rotate(360deg);
         }
     }
+
+    @keyframes orbit2 {
+        from {
+            transform: rotate(0deg)translateX(100px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(100px) rotate(-360deg);
+        }
+    }
+
 
     .earth-outline {
         height: 300px;
@@ -106,7 +111,7 @@
             top: 43%;
             box-shadow: -4px 2px 15px #99b9b6;
             transform: translate(-50%, -50%);
-            animation: orbit4 20s linear infinite;
+            animation: orbit3 20s linear infinite;
 
 
             .earth-circle {
@@ -121,13 +126,63 @@
             }
         }
 
-        @keyframes orbit4 {
+        @keyframes orbit3 {
             from {
                 transform: rotate(0deg)translateX(150px) rotate(0deg);
             }
 
             to {
                 transform: rotate(360deg)translateX(150px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit5 {
+            from {
+                transform: rotate(0deg)translateX(185px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg)translateX(185px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit6 {
+            from {
+                transform: rotate(0deg)translateX(217px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg)translateX(217px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit7 {
+            from {
+                transform: rotate(0deg)translateX(250px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg)translateX(250px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit8 {
+            from {
+                transform: rotate(0deg)translateX(280px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg)translateX(280px) rotate(-360deg);
+            }
+        }
+
+        @keyframes orbit9 {
+            from {
+                transform: rotate(0deg)translateX(310px) rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg)translateX(310px) rotate(-360deg);
             }
         }
 
@@ -140,156 +195,16 @@
             transform: translate(-50%, -50%);
             left: 45%;
             top: 45%;
-            animation: orbit5 3s linear infinite;
+            animation: orbit4 3s linear infinite;
         }
 
-        @keyframes orbit5 {
+        @keyframes orbit4 {
             from {
                 transform: rotate(0deg)translateX(33px) rotate(0deg);
             }
 
             to {
                 transform: rotate(360deg)translateX(33px) rotate(-360deg);
-            }
-        }
-    }
-
-    .mars-outline {
-        height: 370px;
-        width: 370px;
-
-        .mars {
-            height: 30px;
-            width: 30px;
-            background: #da4b49;
-            border-radius: 50%;
-            position: absolute;
-            left: 46.5%;
-            top: 46.5%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit6 30s linear infinite;
-        }
-
-        @keyframes orbit6 {
-            from {
-                transform: rotate(0deg)translateX(185px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(185px) rotate(-360deg);
-            }
-        }
-    }
-
-    .jupiter-outline {
-        height: 430px;
-        width: 430px;
-
-        .jupiter {
-            height: 40px;
-            width: 40px;
-            background: #935fac;
-            border-radius: 50%;
-            position: absolute;
-            left: 45%;
-            top: 45%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit7 60s linear infinite;
-        }
-
-        @keyframes orbit7 {
-            from {
-                transform: rotate(0deg)translateX(217px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(217px) rotate(-360deg);
-            }
-        }
-    }
-
-    .saturn-outline {
-        height: 500px;
-        width: 500px;
-
-        .saturn {
-            height: 50px;
-            width: 50px;
-            background: #bb7334;
-            border-radius: 50%;
-            position: absolute;
-            left: 45%;
-            top: 45%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit8 90s linear infinite;
-        }
-
-        @keyframes orbit8 {
-            from {
-                transform: rotate(0deg)translateX(250px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(250px) rotate(-360deg);
-            }
-        }
-    }
-
-    .uranus-outline {
-        height: 560px;
-        width: 560px;
-
-        .uranus {
-            height: 30px;
-            width: 30px;
-            background: #385ac8;
-            border-radius: 50%;
-            position: absolute;
-            left: 48%;
-            top: 48%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit9 200s linear infinite;
-        }
-
-        @keyframes orbit9 {
-            from {
-                transform: rotate(0deg)translateX(280px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(280px) rotate(-360deg);
-            }
-        }
-    }
-
-    .neptune-outline {
-        height: 615px;
-        width: 615px;
-
-        .neptune {
-            height: 20px;
-            width: 20px;
-            background: #6e799b;
-            border-radius: 50%;
-            position: absolute;
-            left: 48%;
-            top: 48%;
-            box-shadow: -4px 2px 15px #99b9b6;
-            transform: translate(-50%, -50%);
-            animation: orbit10 400s linear infinite;
-        }
-
-        @keyframes orbit10 {
-            from {
-                transform: rotate(0deg)translateX(310px) rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg)translateX(310px) rotate(-360deg);
             }
         }
     }

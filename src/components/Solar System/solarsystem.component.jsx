@@ -1,8 +1,6 @@
-
 import './solarsystem.styles.scss'
 
-// solar system - later add background images 
-//background-size: cover;
+import Planet from '../Planet/planet.component';
 
 const SolarSystem = () => {
     return (
@@ -10,13 +8,24 @@ const SolarSystem = () => {
             <div className="solarsystem-container">
                 <div className="sun" name="sun"></div>
 
-                <div className="mercury-outline" name="mercury-outline">
-                    <div className="mercury planet-child" name="mercury"></div>
-                </div>
-
-                <div className="venus-outline" name="venus-outline">
-                    <div className="venus planet-child" name="venus"></div>
-                </div>
+                <Planet
+                    name="mercury"
+                    size="20px"
+                    sizeOutline="140px"
+                    color="#db9898"
+                    left="43%"
+                    top="42%"
+                    orbitAnimation="orbit1 5s linear infinite"
+                />
+                <Planet
+                    name="venus"
+                    size="40px"
+                    sizeOutline="200px"
+                    color="#7badb9"
+                    left="40%"
+                    top="42%"
+                    orbitAnimation="orbit2 10s linear infinite"
+                />
 
                 <div className="earth-outline" name="earth-outline">
                     <div className="earth planet-child" name="earth">
@@ -26,25 +35,51 @@ const SolarSystem = () => {
                     </div>
                 </div>
 
-                <div className="mars-outline" name="mars-outline">
-                    <div className="mars planet-child" name="mars"></div>
-                </div>
-
-                <div className="jupiter-outline" name="jupiter-outline">
-                    <div className="jupiter planet-child" name="jupiter"></div>
-                </div>
-
-                <div className="saturn-outline" name="saturn-outline">
-                    <div className="saturn planet-child" name="saturn"></div>
-                </div>
-
-                <div className="uranus-outline" name="uranus-outline">
-                    <div className="uranus planet-child" name="uranus"></div>
-                </div>
-
-                <div className="neptune-outline" name="neptune-outline">
-                    <div className="neptune planet-child" name="neptune"></div>
-                </div>
+                <Planet
+                    name="mars"
+                    size="30px"
+                    sizeOutline="370px"
+                    color="#da4b49"
+                    left="46.5%"
+                    top="46.5%"
+                    orbitAnimation="orbit5 30s linear infinite"
+                />
+                <Planet
+                    name="jupiter"
+                    size="40px"
+                    sizeOutline="430px"
+                    color="#935fac"
+                    left="45%"
+                    top="45%"
+                    orbitAnimation="orbit6 60s linear infinite"
+                />
+                <Planet
+                    name="saturn"
+                    size="50px"
+                    sizeOutline="500px"
+                    color="#bb7334"
+                    left="45%"
+                    top="45%"
+                    orbitAnimation="orbit7 90s linear infinite"
+                />
+                <Planet
+                    name="uranus"
+                    size="30px"
+                    sizeOutline="560px"
+                    color="#385ac8"
+                    left="48%"
+                    top="48%"
+                    orbitAnimation="orbit8 200s linear infinite"
+                />
+                <Planet
+                    name="neptune"
+                    size="20px"
+                    sizeOutline="615px"
+                    color="#6e799b"
+                    left="48%"
+                    top="48%"
+                    orbitAnimation="orbit9 400s linear infinite"
+                />
 
             </div>
         </>
