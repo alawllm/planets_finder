@@ -1,16 +1,16 @@
 .footer-container {
-    background-color: rgb(47, 42, 145);
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(19, 15, 86);
     color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 50px;
+    height: 20px;
     padding: 5px;
     width: 100%;
-    bottom: 0;
     left: 0;
-    position: sticky;
-    margin-top: 50px;
+    font-size: 1rem;
 
     p {
         padding: 0;

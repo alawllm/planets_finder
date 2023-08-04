@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import Footer from "../../components/Footer/footer.component";
 
 import './navigation.styles.scss'
 
@@ -10,10 +9,10 @@ const Navigation = () => {
                 <div className='nav-links-container'>
                     <Link className='nav-link' to='/'>Home</Link>
                     <Link className='nav-link' to='/own-planet'>Find your own planet</Link>
+                    <Link className='nav-link' to='/about'>About me</Link>
                 </div>
             </div>
             <Outlet />
-            <Footer />
         </>
     )
 }

@@ -1,6 +1,6 @@
 .planet-input-container {
-    width: 500px;
-    height: 500px;
+    width: 540px;
+    height: 540px;
     border-radius: 50%;
     background-color: rgb(34, 56, 224);
     color: white;
@@ -12,17 +12,15 @@
 
 @media (max-width: 768px) {
     .planet-input-container {
-        width: 450px;
-        height: 450px;
-        /* ... other styles for smaller screens ... */
+        width: 470px;
+        height: 470px;
     }
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 415px) {
     .planet-input-container {
-        width: 350px;
-        height: 350px;
-        /* ... other styles for smaller screens ... */
+        width: 360px;
+        height: 360px;
     }
 }
