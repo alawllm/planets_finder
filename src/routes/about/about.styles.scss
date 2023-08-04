@@ -2,4 +2,17 @@
     color: white;
     font-size: 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

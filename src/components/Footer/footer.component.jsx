@@ -1,12 +1,12 @@
 import './footer.styles.scss'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <>
             <div className="footer-container">
-                <p>Developed in 2023 by__</p>
-                <p><a href="#">GitHub</a></p>
-                <p> <a href="#">LinkedIn</a></p>
+                <p>Developed in 2023 by Ala Wlm</p>
+                <Link className='nav-link' to='/about'>About me</Link>
             </div>
 
         </>

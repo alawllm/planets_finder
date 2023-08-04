@@ -1,16 +1,7 @@
-const Planet = ({ name, sizeOutline, size, color, left, top, orbitAnimation }) => {
+const Planet = ({ name }) => {
     return (
-        <div className={`${name}-outline`}
-            style={{ height: sizeOutline, width: sizeOutline }}>
-            <div className={`${name} planet-child`}
-                style={{
-                    height: size,
-                    width: size,
-                    background: color,
-                    left: left,
-                    top: top,
-                    animation: orbitAnimation
-                }}></div>
+        <div className={`${name}-outline`}>
+            <div className={`${name} planet-child`}></div>
         </div>
     )
 }
