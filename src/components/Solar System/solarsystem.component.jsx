@@ -1,4 +1,4 @@
-import './solarsystem.styles.scss'
+import './solarsystem.styles.css'
 
 import Planet, { PlanetStatic } from '../Planet/planet.component';
 

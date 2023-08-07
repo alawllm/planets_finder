@@ -1,6 +1,6 @@
 import SolarSystem from "../../components/Solar System/solarsystem.component";
 
-import './home.styles.scss'
+import './home.styles.css'
 
 const Home = () => {
 

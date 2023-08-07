@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-import './info-page.styles.scss'
+import './info-page.styles.css'
 
 const InfoPage = () => {
     let location = useLocation();

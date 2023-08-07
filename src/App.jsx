@@ -6,7 +6,7 @@ import OwnPlanet from './routes/Own-Planet/own-planet.component'
 import Navigation from './routes/navigation/navigation.component'
 import About from './routes/about/about.component'
 
-import './App.scss'
+import './app.css'
 
 const App = () => {
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import './own-planet.styles.scss'
+import './own-planet.styles.css'
 
 
 //later add proper error handling of the input
