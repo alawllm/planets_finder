@@ -13,16 +13,18 @@
 html,
 body {
   //height and width need to stay 100vw/vw
-  height: 100vh;
-  min-height: fill-available;
-  min-height: -webkit-fill-available;
+  min-height: 100vh;
   width: 100vw;
 }
 
 body {
   padding: 0;
-  position: absolute;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   // border-radius: 10px;
   font-family: Handjet;
   font-size: 1.3rem;
@@ -35,8 +37,8 @@ body {
   box-sizing: border-box;
   //root div takes the whole height of the body 
   height: 100%;
-  width: 100%;
-  padding: 50px;
+  width: 100vw;
+  padding: 10px;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
