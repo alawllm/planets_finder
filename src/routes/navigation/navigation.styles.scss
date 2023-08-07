@@ -10,7 +10,8 @@
     .nav-links-container {
         height: 100%;
         display: flex;
-        place-items: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-link {

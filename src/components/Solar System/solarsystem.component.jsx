@@ -1,6 +1,6 @@
 import './solarsystem.styles.scss'
 
-import Planet from '../Planet/planet.component';
+import Planet, { PlanetStatic } from '../Planet/planet.component';
 
 const SolarSystem = () => {
     // const navigateTo = useNavigate();
@@ -11,24 +11,38 @@ const SolarSystem = () => {
     return (
         <>
             <div className="solarsystem-container">
-                <Planet name="sun" />
-                <Planet name="mercury" />
-                <Planet name="venus" />
+                <div className="hide-on-small-screen">
+                    <Planet name="sun" />
+                    <Planet name="mercury" />
+                    <Planet name="venus" />
 
-                <div className="earth-outline" name="earth-outline">
-                    <div className="earth planet-child" name="earth">
-                        <div className="earth-circle">
-                            <div className="earth-inner planet-child"></div>
+                    <div className="earth-outline" name="earth-outline">
+                        <div className="earth planet-child" name="earth">
+                            <div className="earth-circle">
+                                <div className="earth-inner planet-child"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <Planet name="mars" />
-                <Planet name="jupiter" />
-                <Planet name="saturn" />
-                <Planet name="uranus" />
-                <Planet name="neptune" />
+                    <Planet name="mars" />
+                    <Planet name="jupiter" />
+                    <Planet name="saturn" />
+                    <Planet name="uranus" />
+                    <Planet name="neptune" />
+                </div>
+                <div className="show-on-small-screen">
+                    <PlanetStatic name="sun" />
+                    <PlanetStatic name="mercury" />
+                    <PlanetStatic name="venus" />
+                    <PlanetStatic name="earth" />
+                    <PlanetStatic name="mars" />
+                    <PlanetStatic name="jupiter" />
+                    <PlanetStatic name="saturn" />
+                    <PlanetStatic name="uranus" />
+                    <PlanetStatic name="neptune" />
+                </div>
             </div>
+
         </>
     )
 }

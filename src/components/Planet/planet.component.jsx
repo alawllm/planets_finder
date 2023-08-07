@@ -6,4 +6,10 @@ const Planet = ({ name }) => {
     )
 }
 
+export const PlanetStatic = ({ name }) => {
+    return (
+        <div className={`${name} planet-child`}></div>
+    )
+}
+
 export default Planet;

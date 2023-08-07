@@ -41,99 +41,99 @@
     .mercury-outline {
         height: 140px;
         width: 140px;
+    }
 
-        .mercury {
-            height: 20px;
-            width: 20px;
-            background-color: #db9898;
-            left: 43%;
-            top: 42%;
-            animation: orbit1 5s linear infinite;
-        }
+    .mercury {
+        height: 20px;
+        width: 20px;
+        background-color: #db9898;
+        left: 43%;
+        top: 42%;
+        animation: orbit1 5s linear infinite;
     }
 
     .venus-outline {
         width: 200px;
         height: 200px;
+    }
 
-        .venus {
-            width: 40px;
-            height: 40px;
-            background-color: #7badb9;
-            left: 40%;
-            top: 42%;
-            animation: orbit2 10s linear infinite;
-        }
+    .venus {
+        width: 40px;
+        height: 40px;
+        background-color: #7badb9;
+        left: 40%;
+        top: 42%;
+        animation: orbit2 10s linear infinite;
     }
 
     .mars-outline {
         width: 370px;
         height: 370px;
+    }
 
-        .mars {
-            width: 30px;
-            height: 30px;
-            background-color: #da4b49;
-            left: 46.5%;
-            top: 46.5%;
-            animation: orbit5 30s linear infinite;
-        }
+    .mars {
+        width: 30px;
+        height: 30px;
+        background-color: #da4b49;
+        left: 46.5%;
+        top: 46.5%;
+        animation: orbit5 30s linear infinite;
     }
 
     .jupiter-outline {
         width: 430px;
         height: 430px;
+    }
 
-        .jupiter {
-            width: 40px;
-            height: 40px;
-            background-color: #935fac;
-            left: 45%;
-            top: 45%;
-            animation: orbit6 60s linear infinite;
-        }
+    .jupiter {
+        width: 40px;
+        height: 40px;
+        background-color: #935fac;
+        left: 45%;
+        top: 45%;
+        animation: orbit6 60s linear infinite;
     }
 
     .saturn-outline {
         width: 500px;
         height: 500px;
+    }
 
-        .saturn {
-            width: 50px;
-            height: 50px;
-            background-color: #bb7334;
-            left: 45%;
-            top: 45%;
-            animation: orbit7 90s linear infinite;
-        }
+    .saturn {
+        width: 50px;
+        height: 50px;
+        background-color: #bb7334;
+        left: 45%;
+        top: 45%;
+        animation: orbit7 90s linear infinite;
     }
 
     .uranus-outline {
         width: 560px;
         height: 560px;
+    }
 
-        .uranus {
-            width: 30px;
-            height: 30px;
-            background-color: #385ac8;
-            left: 48%;
-            top: 48%;
-            animation: orbit8 200s linear infinite;
-        }
+    .uranus {
+        width: 30px;
+        height: 30px;
+        background-color: #385ac8;
+        left: 48%;
+        top: 48%;
+        animation: orbit8 200s linear infinite;
     }
 
     .neptune-outline {
         width: 615px;
         height: 615px;
+    }
 
-        .neptune {
-            width: 20px;
-            height: 20px;
-            background-color: #6e799b;
-            left: 48%;
-            top: 48%;
-            animation: orbit9 50s linear infinite;
-        }
+    .neptune {
+        width: 20px;
+        height: 20px;
+        background-color: #6e799b;
+        left: 48%;
+        top: 48%;
+        animation: orbit9 50s linear infinite;
     }
 
     @keyframes orbit1 {
@@ -272,5 +272,47 @@
 
     &:hover .planet-child {
         animation-play-state: paused;
+    }
+}
+
+@media(max-width: 640px) {
+    .hide-on-small-screen {
+        display: none;
+    }
+}
+
+.show-on-small-screen {
+    display: none;
+}
+
+@media(max-width: 640px) {
+    .solarsystem-container {
+        width: 360px;
+        height: 150vh;
+
+        .show-on-small-screen {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .planet-child {
+                animation: none;
+                position: static;
+                transform: scale(1.2);
+                margin: 1rem;
+                transform: translate(-50%, -50%);
+
+            }
+
+            .mercury {
+                animation: none;
+            }
+
+            .jupiter {
+                animation: none;
+            }
+        }
     }
 }

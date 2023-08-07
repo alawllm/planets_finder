@@ -4,6 +4,8 @@ import './navigation.styles.scss'
 import Footer from "../../components/Footer/footer.component";
 
 const Navigation = () => {
+
+
     return (
         <>
             <div className='navigation'>

@@ -6,7 +6,7 @@ const Home = () => {
 
     return (
         <div className="home-cont">
-            <h1>Your home solar system</h1>
+            <h1 className="home-text">Your home solar system</h1>
             <SolarSystem />
         </div>
     )
