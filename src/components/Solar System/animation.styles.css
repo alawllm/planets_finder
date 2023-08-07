@@ -1,0 +1,90 @@
+    /*all the orbits - keyframes cannot be passed as props */
+    @keyframes orbit1 {
+        from {
+            transform: rotate(0deg)translateX(70px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(70px) rotate(360deg);
+        }
+    }
+
+    @keyframes orbit2 {
+        from {
+            transform: rotate(0deg)translateX(100px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(100px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit3 {
+        from {
+            transform: rotate(0deg)translateX(150px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(150px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit4 {
+        from {
+            transform: rotate(0deg)translateX(33px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(33px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit5 {
+        from {
+            transform: rotate(0deg)translateX(185px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(185px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit6 {
+        from {
+            transform: rotate(0deg)translateX(217px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(217px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit7 {
+        from {
+            transform: rotate(0deg)translateX(250px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(250px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit8 {
+        from {
+            transform: rotate(0deg)translateX(280px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(280px) rotate(-360deg);
+        }
+    }
+
+    @keyframes orbit9 {
+        from {
+            transform: rotate(0deg)translateX(310px) rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg)translateX(310px) rotate(-360deg);
+        }
+    }
