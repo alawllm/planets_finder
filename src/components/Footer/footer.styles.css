@@ -25,14 +25,14 @@
             text-decoration: underline;
         }
     }
+}
 
+.footer-text {
+    display: fixed;
+}
+
+@media (max-width: 640px) {
     .footer-text {
-        display: fixed;
-    }
-
-    @media (max-width: 640px) {
-        .footer-text {
-            display: none;
-        }
+        display: none;
     }
 }

@@ -1,23 +1,23 @@
 .navigation {
     top: 0;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     display: flex;
     background-color: rgb(47, 42, 145);
     color: white;
     height: 50px;
+}
 
-    .nav-links-container {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.nav-links-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .nav-link {
-        padding: 5px 40px;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-    }
+.nav-link {
+    padding: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
 }

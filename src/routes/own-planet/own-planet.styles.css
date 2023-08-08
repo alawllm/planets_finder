@@ -2,7 +2,7 @@
     width: 540px;
     height: 540px;
     border-radius: 50%;
-    background-color: rgb(34, 56, 224);
+    background-color: rgb(47, 58, 137);
     color: white;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,8 @@
 
 @media (max-width: 415px) {
     .planet-input-container {
-        width: 360px;
-        height: 360px;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
     }
 }
