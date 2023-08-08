@@ -9,7 +9,7 @@ export const PlanetStatic = ({ name, onClick }) => {
 
 const Planet = ({ name, onClick }) => {
     return (
-        <div className={`${name}-outline`} onClick={onClick}>
+        <div className={`${name}-outline`} onClick={onClick} >
             <div className={`${name} planet-child`}></div>
         </div>
     )
