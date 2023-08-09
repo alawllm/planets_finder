@@ -9,6 +9,7 @@ import './own-planet.styles.css'
 const OwnPlanet = () => {
     const [planetName, setPlanetName] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     const navigateTo = useNavigate();
 
@@ -18,8 +19,8 @@ const OwnPlanet = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!planetName) return;
         setIsLoading(true);
+        setError(null)
 
         const options = {
             method: 'GET',
@@ -34,12 +35,18 @@ const OwnPlanet = () => {
         async function fetchData() {
             try {
                 const response = await axios.request(options);
-                const infoObject = response.data[0]
-                console.log('response', infoObject)
-                navigateTo('/info-page', { state: infoObject })
+                if (response.data && response.data.length > 0) {
+                    const infoObject = response.data[0]
+                    console.log('response', infoObject)
+                    navigateTo('/info-page', { state: infoObject })
+                } else {
+                    setError('Planet not found')
+                }
             } catch (error) {
-                console.error(error);
+                console.log('error:', error)
+                setError('An error occured while fetching.')
                 setIsLoading(false)
+
             } finally {
                 setIsLoading(false)
             }
@@ -50,10 +57,20 @@ const OwnPlanet = () => {
     return (
         <>
             <div className="planet-input-container">
+
                 <h1 className="header-type">type in planet name</h1>
-                {isLoading && <p>Loading...</p>}
-                <input type="text" name="planetName" value={planetName} onChange={handleChange} placeholder="planet name" />
-                <button onClick={handleSubmit}>Submit</button>
+
+                {isLoading && <p className="loading-text">Loading...</p>}
+                {Error && <p className="error-text">{error}</p>}
+                <input className="input-api"
+                    type="text"
+                    name="planetName"
+                    value={planetName}
+                    onChange={handleChange}
+                    placeholder="planet name" />
+                <button
+                    className="submit-button"
+                    onClick={handleSubmit}>Submit</button>
             </div>
         </>
     )

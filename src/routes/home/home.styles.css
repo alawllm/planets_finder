@@ -6,16 +6,17 @@
     height: 100%;
     margin: 0;
 
-    h1 {
+    .home-text {
         margin-bottom: 3rem;
+        font-size: 3.5rem;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .home-cont {
 
-        h1 {
-            font-size: 2.5rem;
+        .home-text {
+            font-size: 2.7rem;
         }
     }
 }

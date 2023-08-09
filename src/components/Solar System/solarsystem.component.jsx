@@ -45,7 +45,6 @@ const SolarSystem = () => {
                         <Planet
                             key={planet}
                             name={planet}
-                            dataName={`${planet}`}
                             onClick={() => handleClick(planet)} />
                     ))}
                 </div>

@@ -1,15 +1,15 @@
     /*all the orbits - keyframes cannot be passed as props */
-    @keyframes orbit1 {
+    @keyframes orbitMercury {
         from {
             transform: rotate(0deg)translateX(70px) rotate(0deg);
         }
 
         to {
-            transform: rotate(360deg)translateX(70px) rotate(360deg);
+            transform: rotate(360deg)translateX(70px) rotate(-360deg);
         }
     }
 
-    @keyframes orbit2 {
+    @keyframes orbitVenus {
         from {
             transform: rotate(0deg)translateX(100px) rotate(0deg);
         }
@@ -19,7 +19,7 @@
         }
     }
 
-    @keyframes orbit3 {
+    @keyframes orbitEarth {
         from {
             transform: rotate(0deg)translateX(150px) rotate(0deg);
         }
@@ -29,7 +29,7 @@
         }
     }
 
-    @keyframes orbit4 {
+    @keyframes orbitMars {
         from {
             transform: rotate(0deg)translateX(33px) rotate(0deg);
         }
@@ -39,17 +39,7 @@
         }
     }
 
-    @keyframes orbit5 {
-        from {
-            transform: rotate(0deg)translateX(185px) rotate(0deg);
-        }
-
-        to {
-            transform: rotate(360deg)translateX(185px) rotate(-360deg);
-        }
-    }
-
-    @keyframes orbit6 {
+    @keyframes orbitJupiter {
         from {
             transform: rotate(0deg)translateX(217px) rotate(0deg);
         }
@@ -59,7 +49,7 @@
         }
     }
 
-    @keyframes orbit7 {
+    @keyframes orbitSaturn {
         from {
             transform: rotate(0deg)translateX(250px) rotate(0deg);
         }
@@ -69,7 +59,7 @@
         }
     }
 
-    @keyframes orbit8 {
+    @keyframes orbitUranus {
         from {
             transform: rotate(0deg)translateX(280px) rotate(0deg);
         }
@@ -79,7 +69,7 @@
         }
     }
 
-    @keyframes orbit9 {
+    @keyframes orbitNeptune {
         from {
             transform: rotate(0deg)translateX(310px) rotate(0deg);
         }

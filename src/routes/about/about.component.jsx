@@ -4,7 +4,7 @@ const About = () => {
     return (
         <>
             <div className="about-content-container">
-                <h1>Hello!</h1>
+                <h1 className="header-type">Hello!</h1>
                 <p>I am Ala</p>
                 <p>frontend developer || ex-architect</p>
                 <a className="about-link" href="https://github.com/alawllm">GitHub</a>
