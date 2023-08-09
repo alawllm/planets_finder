@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import Planet, { PlanetStatic } from '../Planet/planet.component';
+import Planet from '../Planet/planet.component';
+import PlanetStatic from '../PlanetStatic/planetstatic.component';
 import './solarsystem.styles.css'
 import './animation.styles.css'
 
 const SolarSystem = () => {
-    const planets = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']
-    const reversed = planets.reverse()
+    const planetNames = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']
+    const reversedNames = [...planetNames].reverse()
     const navigateTo = useNavigate();
 
     const handleClick = (planetName) => {
         if (!planetName) return;
-        console.log('planet name:', planetName)
 
         const options = {
             method: 'GET',
@@ -34,25 +34,23 @@ const SolarSystem = () => {
             }
         }
         fetchData();
-    }
 
-    const handleClick2 = (planetName) => {
-        console.log(planetName)
     }
 
     return (
         <>
             <div className="solarsystem-container">
                 <div className="hide-on-small-screen">
-                    {reversed.map((planet) => (
+                    {reversedNames.map((planet) => (
                         <Planet
                             key={planet}
                             name={planet}
+                            dataName={`${planet}`}
                             onClick={() => handleClick(planet)} />
                     ))}
                 </div>
                 <div className="show-on-small-screen">
-                    {planets.map((planet) => (
+                    {planetNames.map((planet) => (
                         <PlanetStatic
                             key={planet}
                             name={planet}

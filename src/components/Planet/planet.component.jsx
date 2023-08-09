@@ -1,16 +1,8 @@
-export const PlanetStatic = ({ name, onClick }) => {
+const Planet = ({ name, onClick, dataName }) => {
+    console.log(name)
     return (
-        <>
-            <div className={`${name} planet-child`} onClick={onClick}></div>
-            <p className="planet-text">{name}</p>
-        </>
-    )
-}
-
-const Planet = ({ name, onClick }) => {
-    return (
-        <div className={`${name}-outline`} onClick={onClick} >
-            <div className={`${name} planet-child`}></div>
+        <div className={`${name}-outline`} onClick={onClick}  >
+            <div className={`${name} planet-child`} data-name={dataName}></div>
         </div>
     )
 }
