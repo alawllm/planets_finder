@@ -10,12 +10,21 @@ const InfoPage = () => {
 
         <>
             <div className="info-container">
-                <h1> here is {planetData.name}</h1>
-                <p>planet mass: {planetData.mass}</p>
-                <p>radius: {planetData.radius}</p>
-                <p>period: {planetData.period}</p>
-                <p>temperature: {planetData.temperature}</p>
-                <p>semi_major_axis: {planetData.semi_major_axis}</p>
+                <div className="left-part">
+                    <h1 className="info-header"> here is {planetData.name}</h1>
+                    {planetData.mass &&
+                        <p className="info-text">{planetData.name} weighs: {planetData.mass}</p>}
+                    {planetData.radius &&
+                        <p className="info-text">{planetData.name}'s radius is: {planetData.radius}</p>}
+                    {planetData.period &&
+                        <p className="info-text"> the time {planetData.name} needs to make full circle:
+                            {planetData.period}</p>}
+                    {planetData.temperature &&
+                        <p className="info-text">temperature: {planetData.temperature}</p>}
+                    {planetData.semi_major_axis &&
+                        <p className="info-text">semi_major_axis: {planetData.semi_major_axis}</p>}
+                </div>
+                <div className="right-part"></div>
             </div>
         </>
     )

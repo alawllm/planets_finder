@@ -1,8 +1,52 @@
 .info-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    background-color: rgb(43, 43, 110);
+    color: rgb(251, 251, 251);
+    font-size: 2rem;
     border-radius: 20px;
-    background-color: darkblue;
-    color: white;
-    padding: 40px;
+
+
+    .left-part {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        line-height: 20px;
+
+        .info-header {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        .info-text {
+            font-size: 1.5rem;
+        }
+    }
+
+    .right-part {
+        background-image: url('https://starwalk.space/gallery/images/saturn-planet-guide/1920x1080.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-radius: 0px 20px 20px 0px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .info-container {
+        margin-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .right-part {
+        width: 100%;
+        height: 300px;
+    }
 }
