@@ -7,24 +7,26 @@ const InfoPage = () => {
     let location = useLocation();
     const planetData = location.state
     console.log('passed data:', planetData)
-    console.log(PLANET_PICS)
+
     const planetPic = PLANET_PICS.find(planet => planet.name === planetData.name.toLowerCase())
-    console.log('planet pic', planetPic)
     return (
 
         <>
             <div className="info-container">
                 <div className="left-part">
                     <h1 className="info-header"> here is {planetData.name}</h1>
-                    {planetData.mass &&
-                        <p className="info-text">{planetData.name} weighs: {planetData.mass} Jupiters</p>}
-                    {planetData.radius &&
-                        <p className="info-text">{planetData.name}'s radius is: {planetData.radius} Jupiters</p>}
-                    {planetData.period &&
-                        <p className="info-text"> Earth days {planetData.name} needs to go a full orbit:
-                            {planetData.period}</p>}
-                    {planetData.temperature &&
-                        <p className="info-text">temperature: {planetData.temperature} in Kelvin</p>}
+                    {planetData.mass && <>
+                        <p className="info-text">{planetData.name} weighs around</p>
+                        <p className="smaller-info-text"> {(planetData.mass * 318).toFixed(0)} times more than Earth.</p></>}
+                    {planetData.radius && <>
+                        <p className="info-text">{planetData.name}'s radius is around </p>
+                        <p className="smaller-info-text">{(planetData.radius * 11).toFixed(0)} times Earth's radius.</p></>}
+                    {planetData.period && <>
+                        <p className="info-text"> Earth days {planetData.name} needs to make a full orbit:</p>
+                        <p className="smaller-info-text"> {planetData.period}.</p></>}
+                    {planetData.temperature && <>
+                        <p className="info-text">{planetData.name}'s average temperature:</p>
+                        <p className="smaller-info-text">{planetData.temperature} in Kelvin.</p></>}
                     {/* {planetData.semi_major_axis &&
                         <p className="info-text">semi_major_axis: {planetData.semi_major_axis}</p>} */}
                 </div>

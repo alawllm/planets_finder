@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 
 import Home from './routes/Home/home.component'
-import InfoPage from './routes/Info-Page/info-page.component'
+import InfoPage from './routes/info-page/info-page.component'
 import OwnPlanet from './routes/own-planet/own-planet.component'
 import Navigation from './routes/navigation/navigation.component'
 import About from './routes/about/about.component'
