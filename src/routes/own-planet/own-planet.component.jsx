@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import SUN_DATA from "../../utils/sunData";
 
 import './own-planet.styles.css'
 
@@ -33,22 +34,26 @@ const OwnPlanet = () => {
         };
 
         async function fetchData() {
-            try {
-                const response = await axios.request(options);
-                if (response.data && response.data.length > 0) {
-                    const infoObject = response.data[0]
-                    console.log('response', infoObject)
-                    navigateTo('/info-page', { state: infoObject })
-                } else {
-                    setError('Planet not found')
-                }
-            } catch (error) {
-                console.log('error:', error)
-                setError('An error occured while fetching.')
-                setIsLoading(false)
+            if (planetName === 'sun') {
+                navigateTo('/info-page', { state: SUN_DATA[0] })
+            } else {
+                try {
+                    const response = await axios.request(options);
+                    if (response.data && response.data.length > 0) {
+                        const infoObject = response.data[0]
+                        console.log('response', infoObject)
+                        navigateTo('/info-page', { state: infoObject })
+                    } else {
+                        setError('Planet not found')
+                    }
+                } catch (error) {
+                    console.log('error:', error)
+                    setError('An error occured while fetching.')
+                    setIsLoading(false)
 
-            } finally {
-                setIsLoading(false)
+                } finally {
+                    setIsLoading(false)
+                }
             }
         }
         fetchData();

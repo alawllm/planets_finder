@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Planet from '../Planet/planet.component';
 import PlanetStatic from '../PlanetStatic/planetstatic.component';
+import SUN_DATA from '../../utils/sunData';
+
 import './solarsystem.styles.css'
 import './animation.styles.css'
 
@@ -9,6 +11,7 @@ const SolarSystem = () => {
     const planetNames = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']
     const reversedNames = [...planetNames].reverse()
     const navigateTo = useNavigate();
+    console.log(SUN_DATA)
 
     const handleClick = (planetName) => {
         if (!planetName) return;
@@ -24,19 +27,21 @@ const SolarSystem = () => {
         };
 
         async function fetchData() {
-            try {
-                const response = await axios.request(options);
-                const infoObject = response.data[0]
-                console.log('response', infoObject)
-                navigateTo('/info-page', { state: infoObject })
-            } catch (error) {
-                console.error(error);
+            if (planetName === 'sun') {
+                navigateTo('/info-page', { state: SUN_DATA[0] })
+            } else {
+                try {
+                    const response = await axios.request(options);
+                    const infoObject = response.data[0]
+                    console.log('response', infoObject)
+                    navigateTo('/info-page', { state: infoObject })
+                } catch (error) {
+                    console.error(error);
+                }
             }
         }
-        fetchData();
-
+        fetchData()
     }
-
     return (
         <>
             <div className="solarsystem-container">

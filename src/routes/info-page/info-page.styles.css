@@ -22,16 +22,27 @@
         }
 
         .info-text {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
         }
+
+        .smaller-info-text {
+            font-size: 1.2rem;
+        }
+
     }
 
     .right-part {
-        background-image: url('https://starwalk.space/gallery/images/saturn-planet-guide/1920x1080.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
         border-radius: 0px 20px 20px 0px;
+        display: flex;
+        place-items: center;
+
+        .planet-image {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
     }
 }
 
