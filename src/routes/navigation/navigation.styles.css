@@ -6,21 +6,21 @@
     background-color: rgb(47, 42, 145);
     color: white;
     height: 50px;
+}
 
-    .nav-links-container {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.nav-links-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .nav-link {
-        padding: 40px;
-        cursor: pointer;
-        text-decoration: none;
-        color: white;
-        cursor: pointer;
-    }
+.nav-link {
+    padding: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 
 @media (max-width: 415px) {

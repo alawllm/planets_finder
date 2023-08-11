@@ -11,21 +11,21 @@
     width: 100%;
     left: 0;
     font-size: 1.2rem;
+}
 
-    p {
-        padding: 0;
-        display: inline-block;
-    }
+.footer.text {
+    padding: 0;
+    display: inline-block;
+}
 
-    .nav-link {
-        text-decoration: none;
-        color: rgb(255, 255, 255);
+.nav-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
 
-        &:hover {
-            text-decoration: underline;
-            cursor: pointer;
-        }
-    }
+.nav-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .footer-text {

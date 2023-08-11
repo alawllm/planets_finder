@@ -8,11 +8,11 @@
     align-items: center;
     width: 50vw;
     height: 60%;
+}
 
-    p {
-        margin: 0;
-        line-height: 2.1rem;
-    }
+.about-paragraph {
+    margin: 0;
+    line-height: 2.1rem;
 }
 
 .links-container {

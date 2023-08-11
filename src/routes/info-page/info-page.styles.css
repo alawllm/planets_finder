@@ -7,61 +7,60 @@
     border-radius: 20px;
     margin: 2rem;
     max-width: 1200px;
+    height: 550px;
+}
 
-    .left-part {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-        padding: 2rem;
-        max-height: 70vh;
+.left-part {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 2rem;
+    max-height: 70vh;
+}
 
+.info-header {
+    position: relative;
+    top: -20px;
+    text-align: left;
+    font-size: 3rem;
+    font-weight: 600;
+    padding-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
-        .info-header {
-            position: relative;
-            top: -20px;
-            text-align: left;
-            font-size: 3rem;
-            font-weight: 600;
-            padding-left: 1rem;
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
+.info-text {
+    font-size: 1.1rem;
+    line-height: 1.12rem;
+    font-family: Bricolage Grotesque, sans-serif;
+    margin: 0.5rem;
+    padding-left: 1rem;
+}
 
-        .info-text {
-            font-size: 1.1rem;
-            line-height: 1.12rem;
-            font-family: Bricolage Grotesque, sans-serif;
-            margin: 0.5rem;
-            padding-left: 1rem;
-        }
+.bigger-info-text {
+    position: relative;
+    left: 2rem;
+    font-size: 1.3rem;
+    line-height: 1.32rem;
+    font-family: Bricolage Grotesque, sans-serif;
+    margin: 0.5rem;
+}
 
-        .bigger-info-text {
-            position: relative;
-            left: 2rem;
-            font-size: 1.3rem;
-            line-height: 1.32rem;
-            font-family: Bricolage Grotesque, sans-serif;
-            margin: 0.5rem;
-        }
-    }
+.right-part {
+    border-radius: 0px 20px 20px 0px;
+    display: flex;
+    place-items: center;
+    height: 100%;
+}
 
-    .right-part {
-        border-radius: 0px 20px 20px 0px;
-        display: flex;
-        place-items: center;
-        height: 100%;
-
-        .planet-image {
-            object-fit: cover;
-            max-height: 70vh;
-            height: 100%;
-            width: 100%;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            border-radius: 0px 20px 20px 0;
-        }
-    }
+.planet-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 0px 20px 20px 0;
 }
 
 
@@ -73,41 +72,42 @@
         justify-content: center;
         height: 100%;
         max-width: 450px;
-
-        .left-part {
-            height: 100%;
-            padding: 2rem;
-
-            .info-header {
-                text-align: left;
-                font-size: 2rem;
-                margin-top: 1rem;
-                margin-bottom: 0;
-            }
-
-            .info-text {
-                font-size: 0.9rem;
-            }
-
-            .bigger-info-text {
-                font-size: 1.1rem;
-                left: 10%;
-            }
-        }
-
-        .right-part {
-            height: 100%;
-            width: 100%;
-
-            .planet-image {
-                object-fit: cover;
-                background-repeat: no-repeat;
-                border-radius: 0 0 20px 20px;
-            }
-        }
     }
 
+    .left-part {
+        height: 100%;
+        padding: 2rem;
+    }
+
+    .info-header {
+        text-align: left;
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+    }
+
+    .bigger-info-text {
+        font-size: 1.1rem;
+        left: 10%;
+    }
+
+    .right-part {
+        height: 100%;
+        width: 100%;
+    }
+
+    .planet-image {
+        object-fit: cover;
+        background-repeat: no-repeat;
+        border-radius: 0 0 20px 20px;
+    }
 }
+
+
 
 @media (max-width: 500px) {
     .info-container {
