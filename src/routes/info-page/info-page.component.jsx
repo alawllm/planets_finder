@@ -11,6 +11,12 @@ const InfoPage = () => {
     const planetData = location.state
     console.log('passed data:', planetData)
 
+    // let planetName = math.format(planetData.name, 'exponential');
+    // let planetMass = math.format(planetData.mass, 'exponential');
+    // let planetPeriod = math.format(planetData.period, 'exponential');
+    // let planetTemperature = math.format(planetData.temperature, 'exponential');
+    // console.log(planetName, planetMass, planetPeriod, planetTemperature)
+
     let planetPic = PLANET_PICS.find(planet => planet.name === planetData.name.toLowerCase())
     if (!planetPic) {
         planetPic = {
@@ -48,8 +54,7 @@ const InfoPage = () => {
                             label={`${planetData.name}'s average temperature:`}
                             content={`${(planetData.temperature)} in Kelvin`}
                         />}
-                    {/* {planetData.semi_major_axis &&
-                        <p className="info-text">semi_major_axis: {planetData.semi_major_axis}</p>} */}
+
                 </div>
                 <div className="right-part">
                     {planetPic && (<img className="planet-image"

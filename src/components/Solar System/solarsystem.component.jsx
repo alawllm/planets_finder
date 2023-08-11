@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import Planet from '../Planet/planet.component';
@@ -8,6 +9,8 @@ import './solarsystem.styles.css'
 import './animation.styles.css'
 
 const SolarSystem = () => {
+    const [hoveredPlanet, setHoveredPlanet] = useState(false)
+
     const planetNames = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']
     const reversedNames = [...planetNames].reverse()
     const navigateTo = useNavigate();
@@ -42,15 +45,29 @@ const SolarSystem = () => {
         }
         fetchData()
     }
+
+    const onHover = (planetName) => {
+        setHoveredPlanet(planetName);
+    };
+
+    const onLeave = () => {
+        setHoveredPlanet(null);
+    };
+
     return (
         <>
             <div className="solarsystem-container">
                 <div className="hide-on-small-screen">
-                    {reversedNames.map((planet) => (
+                    {reversedNames.map((planet) => (<>
                         <Planet
                             key={planet}
                             name={planet}
-                            onClick={() => handleClick(planet)} />
+                            onClick={() => handleClick(planet)}
+                            onMouseEnter={() => onHover(planet)}
+                            onMouseLeave={onLeave}
+                            isHovered={hoveredPlanet === planet}
+                        />
+                    </>
                     ))}
                 </div>
                 <div className="show-on-small-screen">

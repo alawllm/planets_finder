@@ -10,6 +10,7 @@
         position: absolute;
         box-shadow: -4px 2px 5px #2b276d;
         transform: translate(-50%, -50%);
+        opacity: 0.87;
     }
 
     .neptune-outline,
@@ -25,6 +26,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        opacity: 0.8;
     }
 
     .neptune-outline {
@@ -150,12 +152,11 @@
 
     .sun {
         position: absolute;
-        width: 110px;
-        height: 110px;
+        width: 100px;
+        height: 100px;
         background-color: rgb(239, 231, 176);
         left: 50%;
         top: 50%;
-        z-index: 1 !important;
     }
 
     .show-on-small-screen {
@@ -168,23 +169,46 @@
             cursor: pointer;
         }
 
-        & .planet-child:hover::after {
+        .planet-child:hover {
+            opacity: 1.0;
+            z-index: 100 !important;
+        }
+
+        /* planet label on hover  */
+        /* & .planet-child:hover::after {
             content: attr(data-name);
-            background-color: rgba(55, 54, 59, 0.85);
-            position: absolute;
-            display: block;
-            bottom: -40px;
+            background-color: rgb(63, 59, 67);
+            position: fixed;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
+            display: block;
             color: white;
-            padding: 3px;
+            padding: 1px 5px;
             border-radius: 5px;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             text-align: center;
             z-index: 999 !important;
+        } */
+
+        .planet-label {
+            position: absolute;
+            background-color: rgba(62, 59, 59, 0.8);
+            color: white;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 1.7rem;
+            pointer-events: none;
+            top: -5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: block;
+            z-index: 100 !important;
         }
+
     }
 }
+
 
 @media(max-width: 640px) {
     .hide-on-small-screen {
