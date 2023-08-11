@@ -2,7 +2,7 @@ const InfoParagraph = ({ label, content }) => {
     return (
         <>
             <p className="info-text">{label}</p>
-            <p className="smaller-info-text">{content}</p>
+            <p className="bigger-info-text">{content}</p>
         </>
     )
 

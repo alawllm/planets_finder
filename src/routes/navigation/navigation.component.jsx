@@ -10,7 +10,7 @@ const Navigation = () => {
         <>
             <div className='navigation'>
                 <div className='nav-links-container'>
-                    <Link className='nav-link' to='/'>Home</Link>
+                    <Link className='nav-link' to='/'>Your Home</Link>
                     <Link className='nav-link' to='/own-planet'>Find your own planet</Link>
                 </div>
             </div>

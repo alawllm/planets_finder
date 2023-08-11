@@ -1,13 +1,12 @@
 .info-container {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
-    grid-template-rows: auto;
     background-color: rgb(43, 43, 110);
     color: rgb(251, 251, 251);
     font-size: 2rem;
     border-radius: 20px;
-    margin: 3rem;
-    max-height: 600px;
+    margin: 2rem;
+    max-width: 1200px;
 
     .left-part {
         display: flex;
@@ -15,7 +14,7 @@
         align-items: left;
         justify-content: center;
         padding: 2rem;
-        max-height: 600px;
+        max-height: 70vh;
 
 
         .info-header {
@@ -37,7 +36,7 @@
             padding-left: 1rem;
         }
 
-        .smaller-info-text {
+        .bigger-info-text {
             position: relative;
             left: 2rem;
             font-size: 1.3rem;
@@ -51,10 +50,11 @@
         border-radius: 0px 20px 20px 0px;
         display: flex;
         place-items: center;
+        height: 100%;
 
         .planet-image {
             object-fit: cover;
-            max-height: 600px;
+            max-height: 70vh;
             height: 100%;
             width: 100%;
             background-repeat: no-repeat;
@@ -65,17 +65,39 @@
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .info-container {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-items: center;
-        margin: 1.3rem;
+        justify-content: center;
+        height: 100%;
+        max-width: 450px;
+
+        .left-part {
+            height: 100%;
+            padding: 2rem;
+
+            .info-header {
+                text-align: left;
+                font-size: 2rem;
+                margin-top: 1rem;
+                margin-bottom: 0;
+            }
+
+            .info-text {
+                font-size: 0.9rem;
+            }
+
+            .bigger-info-text {
+                font-size: 1.1rem;
+                left: 10%;
+            }
+        }
 
         .right-part {
+            height: 100%;
             width: 100%;
-            height: 300px;
 
             .planet-image {
                 object-fit: cover;
@@ -85,4 +107,15 @@
         }
     }
 
+}
+
+@media (max-width: 500px) {
+    .info-container {
+        margin: 0.5rem;
+        max-width: 340px;
+    }
+
+    .left-part {
+        padding: 0.5rem;
+    }
 }

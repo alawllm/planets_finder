@@ -6,6 +6,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 50vw;
+    height: 60%;
+
+    p {
+        margin: 0;
+        line-height: 2.1rem;
+    }
+}
+
+.links-container {
+    .about-link {
+        font-size: 2.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }
 
 a {
