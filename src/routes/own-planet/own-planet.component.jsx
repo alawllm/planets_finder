@@ -59,23 +59,59 @@ const OwnPlanet = () => {
         fetchData();
     }
 
+    const handleRandom = () => {
+        const planetMass = Math.random() * .1
+        const planetOffset = Math.floor(Math.random() * 100)
+        const options = {
+            method: 'GET',
+            url: 'https://planets-by-api-ninjas.p.rapidapi.com/v1/planets',
+            params: { min_mass: planetMass, offset: planetOffset },
+            headers: {
+                'X-RapidAPI-Key': import.meta.env.VITE_APP_API_KEY,
+                'X-RapidAPI-Host': 'planets-by-api-ninjas.p.rapidapi.com'
+            }
+        }
+        async function fetchData() {
+            try {
+                const response = await axios.request(options);
+                if (response.data && response.data.length > 0) {
+                    const infoObject = response.data[0]
+                    console.log('response', infoObject)
+                    navigateTo('/info-page', { state: infoObject })
+                }
+            } catch (error) {
+                console.log('error:', error)
+            }
+        }
+        fetchData();
+    }
+
+
+
     return (
         <>
-            <div className="planet-input-container">
+            <div className="planets-site-container">
+                <div className="random-cont">
+                    <button className="random-button"
+                        onClick={handleRandom}
+                    >I'm feeling lucky</button>
+                </div>
+                <div className="planet-input-container">
 
-                <h1 className="header-type">type in planet name</h1>
+                    <h1 className="header-type">type in planet name</h1>
 
-                {isLoading && <p className="loading-text">Loading...</p>}
-                {Error && <p className="error-text">{error}</p>}
-                <input className="input-api"
-                    type="text"
-                    name="planetName"
-                    value={planetName}
-                    onChange={handleChange}
-                    placeholder="planet name" />
-                <button
-                    className="submit-button"
-                    onClick={handleSubmit}>Submit</button>
+                    {isLoading && <p className="loading-text">Loading...</p>}
+                    {Error && <p className="error-text">{error}</p>}
+                    <input className="input-api"
+                        type="text"
+                        name="planetName"
+                        value={planetName}
+                        onChange={handleChange}
+                        placeholder="planet name" />
+                    <button
+                        className="submit-button"
+                        onClick={handleSubmit}>Submit</button>
+                </div>
             </div>
         </>
     )

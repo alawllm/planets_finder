@@ -58,17 +58,19 @@ const SolarSystem = () => {
         <>
             <div className="solarsystem-container">
                 <div className="hide-on-small-screen">
-                    {reversedNames.map((planet) => (<>
-                        <Planet
-                            key={planet}
-                            name={planet}
-                            onClick={() => handleClick(planet)}
-                            onMouseEnter={() => onHover(planet)}
-                            onMouseLeave={onLeave}
-                            isHovered={hoveredPlanet === planet}
-                        />
-                    </>
+                    {reversedNames.map((planet) => (
+                        <>
+                            <Planet
+                                key={planet}
+                                name={planet}
+                                onClick={() => handleClick(planet)}
+                                onMouseEnter={() => onHover(planet)}
+                                onMouseLeave={onLeave}
+                                isHovered={hoveredPlanet === planet}
+                            />
+                        </>
                     ))}
+                    {hoveredPlanet && <p className="planet-label">_{hoveredPlanet}_</p>}
                 </div>
                 <div className="show-on-small-screen">
                     {planetNames.map((planet) => (
