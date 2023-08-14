@@ -11,12 +11,6 @@ const InfoPage = () => {
     const planetData = location.state
     console.log('passed data:', planetData)
 
-    // let planetName = math.format(planetData.name, 'exponential');
-    // let planetMass = math.format(planetData.mass, 'exponential');
-    // let planetPeriod = math.format(planetData.period, 'exponential');
-    // let planetTemperature = math.format(planetData.temperature, 'exponential');
-    // console.log(planetName, planetMass, planetPeriod, planetTemperature)
-
     let planetPic = PLANET_PICS.find(planet => planet.name === planetData.name.toLowerCase())
     if (!planetPic) {
         planetPic = {
@@ -29,32 +23,64 @@ const InfoPage = () => {
             <div className="info-container">
                 <div className="left-part">
                     <h1 className="info-header"> here is {planetData.name}</h1>
+                    {planetData.name.toLowerCase() !== "earth" &&
+                        (<>
+                            {
+                                planetData.mass &&
+                                <InfoParagraph
+                                    label={`${planetData.name} weighs around`}
+                                    content={`${(planetData.mass * 318).toFixed(2)} Earth's mass.`}
+                                />
+                            }
 
+                            {planetData.radius &&
+                                <InfoParagraph
+                                    label={`${planetData.name} radius is around`}
+                                    content={`${(planetData.radius * 11).toFixed(2)} Earth's radius.`}
+                                />}
 
-                    {planetData.mass &&
-                        <InfoParagraph
-                            label={`${planetData.name} weighs around`}
-                            content={`${(planetData.mass * 318).toFixed(2)} times Earth's mass.`}
-                        />}
+                            {planetData.period &&
+                                <InfoParagraph
+                                    label={`Earth days ${planetData.name} needs to make a full orbit:`}
+                                    content={`${(planetData.period)}`}
+                                />}
 
-                    {planetData.radius &&
-                        <InfoParagraph
-                            label={`${planetData.name} radius is around`}
-                            content={`${(planetData.radius * 11).toFixed(2)} times Earth's radius.`}
-                        />}
+                            {planetData.temperature &&
+                                <InfoParagraph
+                                    label={`${planetData.name}'s average temperature:`}
+                                    content={`${(planetData.temperature - 273)} °C`}
+                                />}
+                        </>
+                        )}
+                    {planetData.name.toLowerCase() === "earth" &&
+                        (<>
+                            {
+                                planetData.mass &&
+                                <InfoParagraph
+                                    label={`Population:`}
+                                    content={`8.1 Billion`}
+                                />
+                            }
 
-                    {planetData.period &&
-                        <InfoParagraph
-                            label={`Earth days ${planetData.name} needs to make a full orbit:`}
-                            content={`${(planetData.period)}`}
-                        />}
+                            {planetData.radius &&
+                                <InfoParagraph
+                                    label={`${planetData.name}'s radius is around`}
+                                    content={"6.371 km"}
+                                />}
 
-                    {planetData.temperature &&
-                        <InfoParagraph
-                            label={`${planetData.name}'s average temperature:`}
-                            content={`${(planetData.temperature)} in Kelvin`}
-                        />}
+                            {planetData.period &&
+                                <InfoParagraph
+                                    label={`Days ${planetData.name} needs to make a full orbit:`}
+                                    content={`${(planetData.period)}`}
+                                />}
 
+                            {planetData.temperature &&
+                                <InfoParagraph
+                                    label={`${planetData.name}'s average temperature:`}
+                                    content={`${(planetData.temperature) - 273} °C`}
+                                />}
+                        </>
+                        )}
                 </div>
                 <div className="right-part">
                     {planetPic && (<img className="planet-image"
