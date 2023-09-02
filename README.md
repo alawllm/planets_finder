@@ -34,9 +34,6 @@ CSS Animation of the solar system stops on hover, in order to be able to choose 
 - Solution URL: [GitHub](https://github.com/alawllm/planets_finder)
 - Live URL: [https://planets-info-app.netlify.app]
 
-## 📸 Screenshots
-
-
 ## 💅 Styles / fonts
 
 - [Google fonts: Handjet](https://fonts.google.com/specimen/Handjet)
@@ -51,6 +48,6 @@ CSS Animation of the solar system stops on hover, in order to be able to choose 
 - [Passing data through React Router](https://dev.to/thatfemicode/passing-data-states-through-react-router-8dh#:~:text=Data%20known%20as%20state%20can,retrieved%20via%20the%20useLocation%20hook.)
 - Book: "React Key Concepts" by Maximilian Schwarzmüller;
 
-## Author
+## 👧🏻 Author
 
 - GitHub - [@alawllm](https://github.com/alawllm)
