@@ -11,14 +11,18 @@ import './animation.styles.css'
 const SolarSystem = () => {
     const [hoveredPlanet, setHoveredPlanet] = useState(false)
 
+    //array with planet names needed to show the name when hovered
     const planetNames = ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune']
-    const reversedNames = [...planetNames].reverse()
+    //reversed array needed to render planet outline divs on the page in reversed order
+    //in order for the planets to be clickable
+    const reversedPlanetNames = [...planetNames].reverse()
+
     const navigateTo = useNavigate();
-    console.log(SUN_DATA)
 
     const handleClick = (planetName) => {
         if (!planetName) return;
 
+        //request to the API is made with the name of the clicked planet
         const options = {
             method: 'GET',
             url: 'https://planets-by-api-ninjas.p.rapidapi.com/v1/planets',
@@ -30,6 +34,7 @@ const SolarSystem = () => {
         };
 
         async function fetchData() {
+            //sun is not a star but I want it included for user experience, this is why it's a special case
             if (planetName === 'sun') {
                 navigateTo('/info-page', { state: SUN_DATA[0] })
             } else {
@@ -37,6 +42,7 @@ const SolarSystem = () => {
                     const response = await axios.request(options);
                     const infoObject = response.data[0]
                     console.log('response', infoObject)
+                    //data sent to info-page with react router's useNavigate
                     navigateTo('/info-page', { state: infoObject })
                 } catch (error) {
                     console.error(error);
@@ -46,6 +52,7 @@ const SolarSystem = () => {
         fetchData()
     }
 
+    //set state with the name of the hovered planet in order to be able to send API request
     const onHover = (planetName) => {
         setHoveredPlanet(planetName);
     };
@@ -57,8 +64,9 @@ const SolarSystem = () => {
     return (
         <>
             <div className="solarsystem-container">
+                {/* animation of the solar system shows only on bigger devices  */}
                 <div className="hide-on-small-screen">
-                    {reversedNames.map((planet) => (
+                    {reversedPlanetNames.map((planet) => (
                         <>
                             <Planet
                                 key={planet}
@@ -72,6 +80,8 @@ const SolarSystem = () => {
                     ))}
                     {hoveredPlanet && <p className="planet-label">_{hoveredPlanet}_</p>}
                 </div>
+                {/* on smaller devices a linear sequence of the planets appears
+                 for the purpose of better UX*/}
                 <div className="show-on-small-screen">
                     {planetNames.map((planet) => (
                         <PlanetStatic

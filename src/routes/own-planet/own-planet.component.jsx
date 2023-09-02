@@ -34,6 +34,7 @@ const OwnPlanet = () => {
         };
 
         async function fetchData() {
+            //sun is not a star but I want it included for user experience, this is why it's a special case
             if (planetName === 'sun') {
                 navigateTo('/info-page', { state: SUN_DATA[0] })
             } else {
@@ -42,6 +43,7 @@ const OwnPlanet = () => {
                     if (response.data && response.data.length > 0) {
                         const infoObject = response.data[0]
                         console.log('response', infoObject)
+                        //passing data with react router's useNavigate
                         navigateTo('/info-page', { state: infoObject })
                     } else {
                         setError('Planet not found')
@@ -59,6 +61,7 @@ const OwnPlanet = () => {
         fetchData();
     }
 
+    //feeling lucky button - randomizing output
     const handleRandom = () => {
         const planetMass = Math.random() * .1
         const planetOffset = Math.floor(Math.random() * 100)

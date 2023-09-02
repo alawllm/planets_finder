@@ -1,4 +1,5 @@
     /*all the orbits - keyframes cannot be passed as props */
+    /* keyframes in a separate files, otherwise it did not work on safari */
     @keyframes orbitMercury {
         from {
             transform: rotate(0deg)translateX(70px) rotate(0deg);

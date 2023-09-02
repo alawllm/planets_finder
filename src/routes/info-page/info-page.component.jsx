@@ -1,17 +1,15 @@
 import { useLocation } from "react-router-dom";
 import InfoParagraph from "../../components/InfoParagraph/info-paragraph.component";
 import PLANET_PICS from "../../utils/planetPics";
-
 import './info-page.styles.css'
-
-
 
 const InfoPage = () => {
     let location = useLocation();
     const planetData = location.state
-    console.log('passed data:', planetData)
 
+    //images for the solar system
     let planetPic = PLANET_PICS.find(planet => planet.name === planetData.name.toLowerCase())
+    //as the API did not provice pics, I provided them hardcoded
     if (!planetPic) {
         planetPic = {
             picUrl: "https://img.volkskrant.nl/3a26315b5e670c336d1ba3bdf4142d2c2af9eff3/gelukkig-is-alles-op-proxima-centauri-nog-slechter-dan-hier"
@@ -52,6 +50,7 @@ const InfoPage = () => {
                                 />}
                         </>
                         )}
+                    {/* earth is a special case because the rest of the planets have earth as their reference  */}
                     {planetData.name.toLowerCase() === "earth" &&
                         (<>
                             {
