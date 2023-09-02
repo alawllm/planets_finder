@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
-import InfoParagraph from "../../components/InfoParagraph/info-paragraph.component";
-import PLANET_PICS from "../../utils/planetPics";
+import InfoParagraph from "../../components/info-paragraph/info-paragraph.component";
+import PLANET_PICS from "../../planet-configs/planetPics";
 import './info-page.styles.css'
 
 const InfoPage = () => {

@@ -1,4 +1,4 @@
-export const PlanetStatic = ({ name, onClick }) => {
+export const PlanetMobile = ({ name, onClick }) => {
     return (
         <>
             <div className={`${name} planet-child`} onClick={onClick}></div>
@@ -7,4 +7,4 @@ export const PlanetStatic = ({ name, onClick }) => {
     )
 }
 
-export default PlanetStatic;
+export default PlanetMobile;

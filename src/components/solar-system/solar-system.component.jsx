@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import Planet from '../Planet/planet.component';
-import PlanetStatic from '../PlanetStatic/planetstatic.component';
-import SUN_DATA from '../../utils/sunData';
+import Planet from '../planet-desktop/planet-desktop.component';
+import PlanetStatic from '../planet-mobile/planet-mobile.component';
+import SUN_DATA from '../../planet-configs/sunData';
 
-import './solarsystem.styles.css'
+import './solar-system.styles.css'
 import './animation.styles.css'
 
 const SolarSystem = () => {
@@ -39,10 +39,8 @@ const SolarSystem = () => {
                 navigateTo('/info-page', { state: SUN_DATA[0] })
             } else {
                 try {
-                    const response = await axios.request(options);
+                    const response = await axios.request(options)
                     const infoObject = response.data[0]
-                    console.log('response', infoObject)
-                    //data sent to info-page with react router's useNavigate
                     navigateTo('/info-page', { state: infoObject })
                 } catch (error) {
                     console.error(error);

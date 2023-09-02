@@ -1,10 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import SUN_DATA from "../../utils/sunData";
+import SUN_DATA from "../../planet-configs/sunData";
 
 import './own-planet.styles.css'
-
 
 //later add proper error handling of the input
 const OwnPlanet = () => {
@@ -42,8 +41,6 @@ const OwnPlanet = () => {
                     const response = await axios.request(options);
                     if (response.data && response.data.length > 0) {
                         const infoObject = response.data[0]
-                        console.log('response', infoObject)
-                        //passing data with react router's useNavigate
                         navigateTo('/info-page', { state: infoObject })
                     } else {
                         setError('Planet not found')
@@ -52,7 +49,6 @@ const OwnPlanet = () => {
                     console.log('error:', error)
                     setError('An error occured while fetching.')
                     setIsLoading(false)
-
                 } finally {
                     setIsLoading(false)
                 }
@@ -79,7 +75,6 @@ const OwnPlanet = () => {
                 const response = await axios.request(options);
                 if (response.data && response.data.length > 0) {
                     const infoObject = response.data[0]
-                    console.log('response', infoObject)
                     navigateTo('/info-page', { state: infoObject })
                 }
             } catch (error) {

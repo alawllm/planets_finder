@@ -1,4 +1,4 @@
-import SolarSystem from "../../components/Solar System/solarsystem.component";
+import SolarSystem from "../../components/solar-system/solar-system.component";
 
 import './home.styles.css'
 
