@@ -1,17 +1,17 @@
 .solarsystem-container {
-    position: relative;
-    display: flex;
-    box-sizing: border-box;
-    height: 640px;
-    width: 640px;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+  height: 640px;
+  width: 640px;
 }
 
 .planet-child {
-    border-radius: 50%;
-    position: absolute;
-    box-shadow: -4px 5px 10px #605f6c;
-    transform: translate(-50%, -50%);
-    opacity: 0.90;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: -4px 5px 10px #605f6c;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
 }
 
 /* outline are overlapping one another in the order their divs are rendered on the page */
@@ -23,208 +23,209 @@
 .earth-outline,
 .venus-outline,
 .mercury-outline {
-    border-radius: 50%;
-    border: 1px dotted rgba(236, 225, 225, 0.6);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.8;
+  border-radius: 50%;
+  border: 1px dotted rgba(236, 225, 225, 0.6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.8;
 }
 
 .neptune-outline {
-    position: absolute;
-    width: 615px;
-    height: 615px;
+  position: absolute;
+  width: 615px;
+  height: 615px;
 }
 
 .neptune {
-    width: 20px;
-    height: 20px;
-    background-color: #6e799b;
-    left: 48%;
-    top: 48%;
-    animation: orbitNeptune 50s linear infinite;
+  width: 20px;
+  height: 20px;
+  background-color: #6e799b;
+  left: 48%;
+  top: 48%;
+  animation: orbitNeptune 50s linear infinite;
 }
 
 .uranus-outline {
-    position: absolute;
-    width: 560px;
-    height: 560px;
+  position: absolute;
+  width: 560px;
+  height: 560px;
 }
 
 .uranus {
-    width: 30px;
-    height: 30px;
-    background-color: #385ac8;
-    left: 48%;
-    top: 48%;
-    animation: orbitUranus 200s linear infinite;
+  width: 30px;
+  height: 30px;
+  background-color: #385ac8;
+  left: 48%;
+  top: 48%;
+  animation: orbitUranus 200s linear infinite;
 }
 
 .saturn-outline {
-    position: absolute;
-    width: 500px;
-    height: 500px;
+  position: absolute;
+  width: 500px;
+  height: 500px;
 }
 
 .saturn {
-    width: 50px;
-    height: 50px;
-    background-color: #bb7334;
-    left: 45%;
-    top: 45%;
-    animation: orbitSaturn 90s linear infinite;
+  width: 50px;
+  height: 50px;
+  background-color: #bb7334;
+  left: 45%;
+  top: 45%;
+  animation: orbitSaturn 90s linear infinite;
 }
 
 .jupiter-outline {
-    position: absolute;
-    width: 430px;
-    height: 430px;
+  position: absolute;
+  width: 430px;
+  height: 430px;
 }
 
 .jupiter {
-    width: 40px;
-    height: 40px;
-    background-color: #935fac;
-    left: 45%;
-    top: 45%;
-    animation: orbitJupiter 60s linear infinite;
+  width: 40px;
+  height: 40px;
+  background-color: #935fac;
+  left: 45%;
+  top: 45%;
+  animation: orbitJupiter 60s linear infinite;
 }
 
 .mars-outline {
-    position: absolute;
-    width: 370px;
-    height: 370px;
+  position: absolute;
+  width: 370px;
+  height: 370px;
 }
 
 .mars {
-    width: 30px;
-    height: 30px;
-    background-color: #da4b49;
-    left: 46.5%;
-    top: 46.5%;
-    animation: orbitMars 30s linear infinite;
+  width: 30px;
+  height: 30px;
+  background-color: #da4b49;
+  left: 46.5%;
+  top: 46.5%;
+  animation: orbitMars 30s linear infinite;
 }
 
 .earth-outline {
-    position: absolute;
-    height: 300px;
-    width: 300px;
+  position: absolute;
+  height: 300px;
+  width: 300px;
 }
 
 .earth {
-    height: 50px;
-    width: 50px;
-    background: #66b178;
-    left: 44%;
-    top: 43%;
-    animation: orbitEarth 20s linear infinite;
+  height: 50px;
+  width: 50px;
+  background: #66b178;
+  left: 44%;
+  top: 43%;
+  animation: orbitEarth 20s linear infinite;
 }
 
 .venus-outline {
-    position: absolute;
-    width: 210px;
-    height: 210px;
+  position: absolute;
+  width: 210px;
+  height: 210px;
 }
 
 .venus {
-    width: 35px;
-    height: 35px;
-    background-color: #7badb9;
-    left: 41%;
-    top: 43%;
-    animation: orbitVenus 10s linear infinite;
+  width: 35px;
+  height: 35px;
+  background-color: #7badb9;
+  left: 41%;
+  top: 43%;
+  animation: orbitVenus 10s linear infinite;
 }
 
 .mercury-outline {
-    position: absolute;
-    height: 145px;
-    width: 145px;
+  position: absolute;
+  height: 145px;
+  width: 145px;
 }
 
 .mercury {
-    height: 25px;
-    width: 25px;
-    background-color: #db9898;
-    left: 43%;
-    top: 42%;
-    transform: translate(-50%, -50%);
-    animation: orbitMercury 6s linear infinite;
+  height: 25px;
+  width: 25px;
+  background-color: #db9898;
+  left: 43%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  animation: orbitMercury 6s linear infinite;
 }
 
 .sun {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: rgb(239, 231, 176);
-    left: 50%;
-    top: 50%;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: rgb(239, 231, 176);
+  left: 50%;
+  top: 50%;
 }
 
 .show-on-small-screen {
-    display: none;
+  display: none;
 }
 
 .hide-on-small-screen {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .hide-on-small-screen:hover .planet-child {
-    animation-play-state: paused;
-    cursor: pointer;
+  animation-play-state: paused;
+  cursor: pointer;
 }
 
 .hide-on-small-screen .planet-child:hover {
-    opacity: 1.0;
-    transition-duration: 0.5s;
+  opacity: 1;
+  transition-duration: 0.5s;
+  box-shadow: -4px 6px 20px #878596;
 }
 
 .hide-on-small-screen .planet-label {
-    position: absolute;
-    color: rgb(242, 240, 224);
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-size: 2.8rem;
-    pointer-events: none;
-    top: -6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
+  position: absolute;
+  color: rgb(242, 240, 224);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 2.8rem;
+  pointer-events: none;
+  top: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
 }
 
-@media(max-width: 640px) {
-    .hide-on-small-screen {
-        display: none;
-    }
+@media (max-width: 640px) {
+  .hide-on-small-screen {
+    display: none;
+  }
 
-    .solarsystem-container {
-        width: 360px;
-        height: 260vh;
-        justify-content: center;
-    }
+  .solarsystem-container {
+    width: 360px;
+    height: 260vh;
+    justify-content: center;
+  }
 
-    .show-on-small-screen {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+  .show-on-small-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 
-    .planet-child {
-        animation: none;
-        position: static;
-        transform: scale(2.2);
-        box-shadow: -4px 2px 10px #7c7c7c;
-        cursor: pointer;
-    }
+  .planet-child {
+    animation: none;
+    position: static;
+    transform: scale(2.2);
+    box-shadow: -4px 2px 10px #7c7c7c;
+    cursor: pointer;
+  }
 
-    .sun {
-        transform: scale(1.5)
-    }
+  .sun {
+    transform: scale(1.5);
+  }
 
-    .planet-text {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-        margin-top: 1rem;
-    }
+  .planet-text {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
 }

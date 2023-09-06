@@ -1,0 +1,10 @@
+.icon-link-project-icon {
+    margin: 0;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    transition: 0.5s;
+}
+
+.icon-link-project-icon:hover {
+    scale: 1.05;
+}

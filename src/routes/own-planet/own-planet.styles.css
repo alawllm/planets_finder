@@ -1,141 +1,140 @@
 .planet-input-container {
-    width: 570px;
-    height: 570px;
-    border-radius: 50%;
-    background-color: rgb(31, 45, 158);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 570px;
+  height: 570px;
+  border-radius: 50%;
+  background-color: rgb(31, 45, 158);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .planet-input-container:hover {
-    background-color: rgb(43, 61, 194);
-    transition-duration: 0.5s;
+  background-color: rgb(43, 61, 194);
+  transition-duration: 0.5s;
 }
 
 .header-type {
-    font-size: 3.7rem;
-    font-weight: 600;
-    text-align: center;
+  font-size: 3.7rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .input-api {
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    margin-bottom: 1rem;
-    width: 10rem;
-    text-align: center;
-    font-size: 1.2rem;
-    font-family: Bricolage Grotesque, sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 1rem;
+  width: 10rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: Bricolage Grotesque, sans-serif;
 }
 
 .loading-text,
 .error-text {
-    margin: 0;
-    margin-bottom: 0.8rem;
-    font-size: 1.2rem;
-    font-family: Bricolage Grotesque, sans-serif;
+  margin: 0;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  font-family: Bricolage Grotesque, sans-serif;
 }
 
 .submit-button {
-    border: none;
-    background-color: rgb(180, 185, 220);
-    border-radius: 10px;
-    padding: 2px;
-    width: 6rem;
-    height: 2rem;
-    font-size: 1rem;
-    font-family: Bricolage Grotesque, sans-serif;
-    font-weight: 600;
+  border: none;
+  background-color: rgb(180, 185, 220);
+  border-radius: 10px;
+  padding: 2px;
+  width: 6rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: Bricolage Grotesque, sans-serif;
+  font-weight: 600;
 }
 
 .submit-button:hover {
-    background-color: rgb(215, 215, 255);
+  background-color: rgb(215, 215, 255);
 }
 
 .error-text {
-    color: rgb(53, 240, 47);
+  color: rgb(53, 240, 47);
 }
 
 .random-cont {
-    position: relative;
-    left: 31rem;
-    top: 3rem;
-    display: flex;
-    place-items: center;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgb(137, 28, 137);
+  position: relative;
+  left: 31rem;
+  top: 3rem;
+  display: flex;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(137, 28, 137);
 }
 
 .random-button {
-    background: none;
-    border: none;
-    text-align: center;
-    color: white;
-    font-size: 1.1rem;
-    font-family: Bricolage Grotesque, sans-serif;
+  background: none;
+  border: none;
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+  font-family: Bricolage Grotesque, sans-serif;
 }
 
 .random-cont:hover {
-    background-color: rgb(162, 53, 162);
-    transition-duration: 0.5s;
+  background-color: rgb(162, 53, 162);
+  transition-duration: 0.5s;
 }
 
 @media (max-width: 768px) {
-    .planet-input-container {
-        width: 470px;
-        height: 470px;
-    }
+  .planet-input-container {
+    width: 470px;
+    height: 470px;
+  }
 
-    .header-type {
-        font-size: 2.9rem;
-    }
+  .header-type {
+    font-size: 2.9rem;
+  }
 
-    .random-cont {
-        left: 22rem;
-        top: 2rem;
-
-    }
+  .random-cont {
+    left: 22rem;
+    top: 2rem;
+  }
 }
 
 @media (max-width: 415px) {
-    .planet-input-container {
-        width: 350px;
-        height: 350px;
-        border-radius: 50%;
-    }
+  .planet-input-container {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+  }
 
-    .header-type {
-        font-size: 2.4rem;
-    }
+  .header-type {
+    font-size: 2.4rem;
+  }
 
-    .input-api {
-        margin-bottom: 0.5rem;
-        width: 8rem;
-        text-align: center;
-        font-size: 1rem;
-        font-family: Bricolage Grotesque, sans-serif;
-    }
+  .input-api {
+    margin-bottom: 0.5rem;
+    width: 8rem;
+    text-align: center;
+    font-size: 1rem;
+    font-family: Bricolage Grotesque, sans-serif;
+  }
 
-    .submit-button {
-        width: 5rem;
-        height: 1.5rem;
-        font-size: 1rem;
-        font-family: Bricolage Grotesque, sans-serif;
-        font-weight: 600;
-    }
+  .submit-button {
+    width: 5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    font-family: Bricolage Grotesque, sans-serif;
+    font-weight: 600;
+  }
 
-    .submit-button:hover {
-        background-color: rgb(215, 215, 255);
-    }
+  .submit-button:hover {
+    background-color: rgb(215, 215, 255);
+  }
 
-    .random-cont {
-        left: 15rem;
-        top: 0rem;
-    }
+  .random-cont {
+    left: 15rem;
+    top: 0rem;
+  }
 }

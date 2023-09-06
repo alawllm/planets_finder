@@ -1,81 +1,81 @@
-    /*all the orbits - keyframes cannot be passed as props */
-    /* keyframes in a separate files, otherwise it did not work on safari */
-    @keyframes orbitMercury {
-        from {
-            transform: rotate(0deg)translateX(70px) rotate(0deg);
-        }
+/*all the orbits - keyframes cannot be passed as props */
+/* keyframes in a separate files, otherwise it did not work on safari */
+@keyframes orbitMercury {
+  from {
+    transform: rotate(0deg) translateX(70px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(70px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(70px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitVenus {
-        from {
-            transform: rotate(0deg)translateX(100px) rotate(0deg);
-        }
+@keyframes orbitVenus {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(100px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitEarth {
-        from {
-            transform: rotate(0deg)translateX(150px) rotate(0deg);
-        }
+@keyframes orbitEarth {
+  from {
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(150px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitMars {
-        from {
-            transform: rotate(0deg)translateX(185px) rotate(0deg);
-        }
+@keyframes orbitMars {
+  from {
+    transform: rotate(0deg) translateX(185px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(185px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(185px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitJupiter {
-        from {
-            transform: rotate(0deg)translateX(217px) rotate(0deg);
-        }
+@keyframes orbitJupiter {
+  from {
+    transform: rotate(0deg) translateX(217px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(217px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(217px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitSaturn {
-        from {
-            transform: rotate(0deg)translateX(250px) rotate(0deg);
-        }
+@keyframes orbitSaturn {
+  from {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(250px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitUranus {
-        from {
-            transform: rotate(0deg)translateX(280px) rotate(0deg);
-        }
+@keyframes orbitUranus {
+  from {
+    transform: rotate(0deg) translateX(280px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(280px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(280px) rotate(-360deg);
+  }
+}
 
-    @keyframes orbitNeptune {
-        from {
-            transform: rotate(0deg)translateX(310px) rotate(0deg);
-        }
+@keyframes orbitNeptune {
+  from {
+    transform: rotate(0deg) translateX(310px) rotate(0deg);
+  }
 
-        to {
-            transform: rotate(360deg)translateX(310px) rotate(-360deg);
-        }
-    }
+  to {
+    transform: rotate(360deg) translateX(310px) rotate(-360deg);
+  }
+}

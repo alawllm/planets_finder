@@ -6,8 +6,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50vw;
+    padding: 1em;
     height: 60%;
+    border-radius: 50px;
 }
 
 .about-paragraph {
