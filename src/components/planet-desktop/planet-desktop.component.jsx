@@ -1,4 +1,4 @@
-const Planet = ({ name, onClick, onMouseEnter, onMouseLeave }) => {
+const PlanetDesktop = ({ name, onClick, onMouseEnter, onMouseLeave }) => {
   return (
     <div className={`${name}-outline`} onClick={onClick}>
       <div
@@ -9,4 +9,4 @@ const Planet = ({ name, onClick, onMouseEnter, onMouseLeave }) => {
   );
 };
 
-export default Planet;
+export default PlanetDesktop;

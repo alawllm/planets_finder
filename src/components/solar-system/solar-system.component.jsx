@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Planet from "../planet-desktop/planet-desktop.component";
-import PlanetStatic from "../planet-mobile/planet-mobile.component";
+import PlanetDesktop from "../planet-desktop/planet-desktop.component";
+import PlanetMobile from "../planet-mobile/planet-mobile.component";
 import SUN_DATA from "../../planet-configs/sunData";
 
 import "./solar-system.styles.css";
@@ -50,6 +50,7 @@ const SolarSystem = () => {
         navigateTo("/info-page", { state: SUN_DATA[0] });
       } else {
         try {
+          setError(null)
           const response = await axios.request(options);
           const infoObject = response.data[0];
           navigateTo("/info-page", { state: infoObject });
@@ -70,11 +71,11 @@ const SolarSystem = () => {
   //set state with the name of the hovered planet in order to be able to send API request
   const onHover = (planetName) => {
     setHoveredPlanet(planetName);
+    setError(null);
   };
 
   const onLeave = () => {
     setHoveredPlanet(null);
-    setError(null);
   };
 
   return (
@@ -83,8 +84,7 @@ const SolarSystem = () => {
         {/* animation of the solar system shows only on bigger devices  */}
         <div className="hide-on-small-screen">
           {reversedPlanetNames.map((planet) => (
-            <>
-              <Planet
+              <PlanetDesktop
                 key={planet}
                 name={planet}
                 onClick={() => handleClick(planet)}
@@ -92,7 +92,6 @@ const SolarSystem = () => {
                 onMouseLeave={onLeave}
                 isHovered={hoveredPlanet === planet}
               />
-            </>
           ))}
           {error && <p className="error-text-solar-system">{error}</p>}
           {hoveredPlanet && <p className="planet-label">_{hoveredPlanet}_</p>}
@@ -102,7 +101,7 @@ const SolarSystem = () => {
         {/* to do - error on mobile  */}
         <div className="show-on-small-screen">
           {planetNames.map((planet) => (
-            <PlanetStatic
+            <PlanetMobile
               key={planet}
               name={planet}
               onClick={() => handleClick(planet)}
