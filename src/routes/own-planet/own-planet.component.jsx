@@ -46,8 +46,9 @@ const OwnPlanet = () => {
             setError("Planet not found");
           }
         } catch (error) {
-          console.log("error:", error);
-          setError("An error occured while fetching.");
+          if (error.response.status === 502) {
+            setError("Sorry, the API is unreachable.");
+          }
           setIsLoading(false);
         } finally {
           setIsLoading(false);
@@ -78,7 +79,11 @@ const OwnPlanet = () => {
           navigateTo("/info-page", { state: infoObject });
         }
       } catch (error) {
-        console.log("error:", error);
+        if (error.response.status === 502) {
+          setError("sorry, the API is unreachable.");
+        } else if (error.response.status !== 502 && error.response.status) {
+          setError("sorry, an error occured.");
+        }
       }
     }
     fetchData();
@@ -96,7 +101,7 @@ const OwnPlanet = () => {
           <h1 className="header-type">type in planet name</h1>
 
           {isLoading && <p className="loading-text">Loading...</p>}
-          {Error && <p className="error-text">{error}</p>}
+          {error && <p className="error-text">{error}</p>}
           <input
             className="input-api"
             type="text"

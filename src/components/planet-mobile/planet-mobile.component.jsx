@@ -1,4 +1,4 @@
-export const PlanetMobile = ({ name, onClick }) => {
+export const PlanetMobile = ({ name, onClick}) => {
   return (
     <>
       <div className={`${name} planet-child`} onClick={onClick}></div>

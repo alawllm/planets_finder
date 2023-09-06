@@ -10,6 +10,7 @@ import "./animation.styles.css";
 
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState(false);
+  const [error, setError] = useState(null);
 
   //array with planet names needed to show the name when hovered
   const planetNames = [
@@ -53,7 +54,13 @@ const SolarSystem = () => {
           const infoObject = response.data[0];
           navigateTo("/info-page", { state: infoObject });
         } catch (error) {
-          console.error(error);
+          if (error.response.status === 502) {
+            setError("sorry, the API is unreachable.");
+            setHoveredPlanet(null);
+          } else if (error.response.status !== 502 && error.response.status) {
+            setError("sorry, an error occured.");
+            setHoveredPlanet(null);
+          }
         }
       }
     }
@@ -67,6 +74,7 @@ const SolarSystem = () => {
 
   const onLeave = () => {
     setHoveredPlanet(null);
+    setError(null);
   };
 
   return (
@@ -86,10 +94,12 @@ const SolarSystem = () => {
               />
             </>
           ))}
+          {error && <p className="error-text-solar-system">{error}</p>}
           {hoveredPlanet && <p className="planet-label">_{hoveredPlanet}_</p>}
         </div>
         {/* on smaller devices a linear sequence of the planets appears
-                 for the purpose of better UX*/}
+        for the purpose of better UX*/}
+        {/* to do - error on mobile  */}
         <div className="show-on-small-screen">
           {planetNames.map((planet) => (
             <PlanetStatic

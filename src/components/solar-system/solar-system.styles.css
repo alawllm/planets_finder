@@ -193,6 +193,19 @@
   display: block;
 }
 
+.error-text-solar-system {
+  position: absolute;
+  color: rgb(53, 240, 47);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  pointer-events: none;
+  top: -6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
 @media (max-width: 640px) {
   .hide-on-small-screen {
     display: none;
