@@ -1,0 +1,16 @@
+.info-text {
+    font-size: 1em;
+    font-family: Bricolage Grotesque, sans-serif;
+    margin: 0.5em;
+    padding-left: 1em;
+  }
+  
+  .bigger-info-text {
+    position: relative;
+    left: 2em;
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.3em;
+    font-family: Bricolage Grotesque, sans-serif;
+    margin: 0.5em;
+  }

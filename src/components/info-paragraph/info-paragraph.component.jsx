@@ -1,3 +1,5 @@
+import './info-paragraph.styles.css'
+
 const InfoParagraph = ({ label, content }) => {
   return (
     <>

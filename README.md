@@ -3,10 +3,17 @@
 This is a Planets Finder App.
 With this App you can find basic information about planets that interest you.
 
+**Warning**
+Unfortunately, there are sometimes issues with the API.
+The server responds then with HTTP Status code 502.
+For clarity, it shows up as "Sorry, the API is unreachable" in the app.
+
 **Users should be able to:**
+
 - connect to the API, fetching information about different planets;
 
 **Connection with the API is possible in three ways:**
+
 - either after having typed the planet name;
 - or fetching randomized data after clicking the 'I'm feeling lucky' button;
 - or manually clicking one of the planets in our solar system;
@@ -14,6 +21,7 @@ With this App you can find basic information about planets that interest you.
 After connecting with the API, the users are redirected to the planets info page.
 
 **Main features:**
+
 - fetching data from the API;
 - working mobile / desktop versions (responsive design);
 - CSS animation of the solar system;
