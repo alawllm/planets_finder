@@ -11,6 +11,18 @@ const OwnPlanet = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const planetNames = [
+    "sun",
+    "mercury",
+    "venus",
+    "earth",
+    "mars",
+    "jupiter",
+    "saturn",
+    "uranus",
+    "neptune",
+  ];
+
   const navigateTo = useNavigate();
 
   const handleChange = (evt) => {
@@ -22,34 +34,32 @@ const OwnPlanet = () => {
     setIsLoading(true);
     setError(null);
 
-    const options = {
-      method: "GET",
-      url: "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets",
-      params: { name: planetName },
-      headers: {
-        "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
-        "X-RapidAPI-Host": "planets-by-api-ninjas.p.rapidapi.com",
-      },
-    };
+  const options = {
+    method: "GET",
+    url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(planetName)}`,
+    headers: {
+      "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
+      "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
+    },
+  };
 
     async function fetchData() {
       //sun is not a star but I want it included for user experience, this is why it's a special case
       if (planetName === "sun") {
-        navigateTo("/info-page", { state: SUN_DATA[0] });
-      } else {
+        const infoObject = SUN_DATA
+        navigateTo("/info-page", { state: infoObject });
+      } else{
         try {
+          setError(null);
           const response = await axios.request(options);
-          if (response.data && response.data.length > 0) {
-            const infoObject = response.data[0];
-            navigateTo("/info-page", { state: infoObject });
-          } else {
-            setError("Planet not found");
-          }
+          const infoObject = response.data;
+          navigateTo("/info-page", { state: infoObject });
         } catch (error) {
           if (error.response.status === 502) {
-            setError("Sorry, the API is unreachable.");
+            setError("sorry, the API is unreachable.");
+          } else if (error.response.status !== 502 && error.response.status) {
+            setError("sorry, an error occured.");
           }
-          setIsLoading(false);
         } finally {
           setIsLoading(false);
         }
@@ -59,25 +69,22 @@ const OwnPlanet = () => {
   };
 
   //feeling lucky button - randomizing output
-  const handleRandom = () => {
-    const planetMass = Math.random() * 0.1;
-    const planetOffset = Math.floor(Math.random() * 100);
+  const handleSubmitRandom = () => {
+    const randomNumber = Math.floor(Math.random() * 8)+1;
     const options = {
       method: "GET",
-      url: "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets",
-      params: { min_mass: planetMass, offset: planetOffset },
+      url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${randomNumber}`,
       headers: {
         "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
-        "X-RapidAPI-Host": "planets-by-api-ninjas.p.rapidapi.com",
+        "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
       },
     };
     async function fetchData() {
       try {
+        setError(null);
         const response = await axios.request(options);
-        if (response.data && response.data.length > 0) {
-          const infoObject = response.data[0];
-          navigateTo("/info-page", { state: infoObject });
-        }
+        const infoObject = response.data;
+        navigateTo("/info-page", { state: infoObject });
       } catch (error) {
         if (error.response.status === 502) {
           setError("sorry, the API is unreachable.");
@@ -93,15 +100,20 @@ const OwnPlanet = () => {
     <>
       <div className="planets-site-container">
         <div className="random-cont">
-          <button className="random-button" onClick={handleRandom}>
-            Feeling lucky
+          <button className="random-button" onClick={handleSubmitRandom}>
+            feeling lucky?
           </button>
         </div>
-        <div className="planet-input-container">
-          <h1 className="header-type">type in planet name</h1>
-
+        <form className="planet-input-container" onSubmit={handleSubmit}>
+          <label className="header-type" htmlFor="planetName">
+            type in planet name
+          </label>
           {isLoading && <p className="loading-text">Loading...</p>}
-          {error && <p className="error-text">{error}</p>}
+          {error && (
+            <div role="alert" aria-live="assertive" className="error-text">
+              {error}
+            </div>
+          )}
           <input
             className="input-api"
             type="text"
@@ -110,10 +122,10 @@ const OwnPlanet = () => {
             onChange={handleChange}
             placeholder="planet name"
           />
-          <button className="submit-button" onClick={handleSubmit}>
-            Submit
+          <button className="submit-button" type="submit">
+            Search
           </button>
-        </div>
+        </form>
       </div>
     </>
   );

@@ -16,6 +16,7 @@
   justify-content: center;
   padding: 1em;
   max-height: 550px;
+  min-width: 400px;
 }
 
 .info-header {
@@ -56,21 +57,22 @@
   }
 
   .left-part {
-    padding-top: 2em;
+    padding-top: 1em;
     max-height: 100%;
   }
 
   .info-header {
     text-align: left;
-    font-size: 2em;
+    font-size: 1.7em;
   }
 
   .info-text {
-    font-size: 0.95em;
+    font-size: 0.9em;
+    max-width: 280px;
   }
 
   .bigger-info-text {
-    font-size: 1.15em;
+    font-size: 1em;
     left: 10%;
   }
 
@@ -83,10 +85,26 @@
 
 @media (max-width: 500px) {
   .info-container {
-    max-width: 340px;
+    max-width: 350px;
+    max-height: 200vh;
+    margin: 0.5em;
+    width: 90vw;
   }
 
   .left-part {
-    padding-top: 2em;
+    padding: 1em;
   }
+
+  .info-header {
+   padding-left: 3em;
+  }
+  .info-text {
+    font-size: 0.8em;
+    padding-left: 3em;
+  }
+
+  .bigger-info-text {
+    font-size: 1em;
+    max-width: 270px;
+left: 3em;  }
 }

@@ -12,7 +12,7 @@ const Navigation = () => {
             Your Home
           </Link>
           <Link className="nav-link" to="/own-planet">
-            Find your own planet
+            Find a planet
           </Link>
         </div>
       </div>

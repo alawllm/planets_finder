@@ -36,23 +36,23 @@ const SolarSystem = () => {
     //request to the API is made with the name of the clicked planet
     const options = {
       method: "GET",
-      url: "https://planets-by-api-ninjas.p.rapidapi.com/v1/planets",
-      params: { name: planetName },
+      url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(planetName)}`,
       headers: {
         "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
-        "X-RapidAPI-Host": "planets-by-api-ninjas.p.rapidapi.com",
+        "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
       },
     };
 
     async function fetchData() {
       //sun is not a star but I want it included for user experience, this is why it's a special case
       if (planetName === "sun") {
-        navigateTo("/info-page", { state: SUN_DATA[0] });
+        const infoObject = SUN_DATA
+        navigateTo("/info-page", { state: infoObject });
       } else {
         try {
-          setError(null)
+          setError(null);
           const response = await axios.request(options);
-          const infoObject = response.data[0];
+          const infoObject = response.data;
           navigateTo("/info-page", { state: infoObject });
         } catch (error) {
           if (error.response.status === 502) {
@@ -84,14 +84,14 @@ const SolarSystem = () => {
         {/* animation of the solar system shows only on bigger devices  */}
         <div className="hide-on-small-screen">
           {reversedPlanetNames.map((planet) => (
-              <PlanetDesktop
-                key={planet}
-                name={planet}
-                onClick={() => handleClick(planet)}
-                onMouseEnter={() => onHover(planet)}
-                onMouseLeave={onLeave}
-                isHovered={hoveredPlanet === planet}
-              />
+            <PlanetDesktop
+              key={planet}
+              name={planet}
+              onClick={() => handleClick(planet)}
+              onMouseEnter={() => onHover(planet)}
+              onMouseLeave={onLeave}
+              isHovered={hoveredPlanet === planet}
+            />
           ))}
           {error && <p className="error-text-solar-system">{error}</p>}
           {hoveredPlanet && <p className="planet-label">_{hoveredPlanet}_</p>}
