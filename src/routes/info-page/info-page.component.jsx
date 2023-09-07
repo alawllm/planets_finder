@@ -25,10 +25,7 @@ const InfoPage = () => {
         {
           <>
             {planetData.description && (
-              <InfoParagraph
-                label={`${planetData.name}'s description`}
-                content={`${planetData.description}`}
-              />
+            <p className="bigger-info-text">{planetData.description}</p>
             )}
             {planetData.basicDetails.mass && (
               <InfoParagraph
@@ -41,6 +38,12 @@ const InfoPage = () => {
                 label={`${planetData.name}'s volume is around`}
                 content={`${planetData.basicDetails.volume} `}
               />
+            )}
+            {planetData.source && (
+              <>
+              <a href={planetData.wikiLink} className="info-text text-link">source: {planetData.source}</a>
+              </>
+              
             )}
           </>
         }

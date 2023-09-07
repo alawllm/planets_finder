@@ -3,11 +3,6 @@
 This is a Planets Finder App.
 With this App you can find basic information about planets that interest you.
 
-**Warning**
-Unfortunately, there are sometimes issues with the API.
-The server responds then with HTTP Status code 502.
-For clarity, it shows up as "Sorry, the API is unreachable" in the app.
-
 **Users should be able to:**
 
 - connect to the API, fetching information about different planets;
