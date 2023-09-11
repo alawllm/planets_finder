@@ -6,18 +6,11 @@ import "./info-page.styles.css";
 const InfoPage = () => {
   let location = useLocation();
   const planetData = location.state;
-  console.log(planetData);
   //images for the solar system
   let planetPic = PLANET_PICS.find(
     (planet) => planet.name === planetData.name.toLowerCase()
   );
-  console.log(planetPic);
-  //as the API did not provice pics, I provided them hardcoded
-  if (!planetPic) {
-    planetPic = {
-      picUrl: "https://i.ibb.co/HVR0p4S/random.webp",
-    };
-  }
+
   return (
     <div className="info-container">
       <div className="left-part">
@@ -25,7 +18,7 @@ const InfoPage = () => {
         {
           <>
             {planetData.description && (
-            <p className="bigger-info-text">{planetData.description}</p>
+              <p className="bigger-info-text">{planetData.description}</p>
             )}
             {planetData.basicDetails.mass && (
               <InfoParagraph
@@ -41,9 +34,10 @@ const InfoPage = () => {
             )}
             {planetData.source && (
               <>
-              <a href={planetData.wikiLink} className="info-text text-link">source: {planetData.source}</a>
+                <a href={planetData.wikiLink} className="info-text text-link">
+                  source: {planetData.source}
+                </a>
               </>
-              
             )}
           </>
         }

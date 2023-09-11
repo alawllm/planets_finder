@@ -34,21 +34,23 @@ const OwnPlanet = () => {
     setIsLoading(true);
     setError(null);
 
-  const options = {
-    method: "GET",
-    url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(planetName)}`,
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
-      "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
-    },
-  };
+    const options = {
+      method: "GET",
+      url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(
+        planetName
+      )}`,
+      headers: {
+        "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
+        "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
+      },
+    };
 
     async function fetchData() {
       //sun is not a star but I want it included for user experience, this is why it's a special case
       if (planetName === "sun") {
-        const infoObject = SUN_DATA
+        const infoObject = SUN_DATA;
         navigateTo("/info-page", { state: infoObject });
-      } else{
+      } else {
         try {
           setError(null);
           const response = await axios.request(options);
@@ -70,7 +72,7 @@ const OwnPlanet = () => {
 
   //feeling lucky button - randomizing output
   const handleSubmitRandom = () => {
-    const randomNumber = Math.floor(Math.random() * 8)+1;
+    const randomNumber = Math.floor(Math.random() * 8) + 1;
     const options = {
       method: "GET",
       url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${randomNumber}`,
