@@ -32,7 +32,7 @@ const SolarSystem = () => {
 
   const handleClick = (planetName) => {
     if (!planetName) return;
-
+console.log(planetName)
     //request to the API is made with the name of the clicked planet
     const options = {
       method: "GET",
@@ -53,6 +53,7 @@ const SolarSystem = () => {
           setError(null);
           const response = await axios.request(options);
           const infoObject = response.data;
+          console.log(infoObject)
           navigateTo("/info-page", { state: infoObject });
         } catch (error) {
           if (error.response.status === 502) {

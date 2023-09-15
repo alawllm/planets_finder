@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import SUN_DATA from "../../planet-configs/sunData";
@@ -10,6 +10,8 @@ const OwnPlanet = () => {
   const [planetName, setPlanetName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const inputRef = useRef(null);
 
   const planetNames = [
     "sun",
@@ -98,6 +100,15 @@ const OwnPlanet = () => {
     fetchData();
   };
 
+  useEffect(() => {
+    const container = document.querySelector(".planet-input-container");
+    const focus = () => {inputRef.current.focus()};
+    container.addEventListener("click", focus);
+    return () => {
+      container.removeEventListener("click", focus);
+    };
+  }, []);
+
   return (
     <>
       <div className="planets-site-container">
@@ -122,6 +133,7 @@ const OwnPlanet = () => {
             name="planetName"
             value={planetName}
             onChange={handleChange}
+            ref={inputRef}
             placeholder="planet name"
           />
           <button className="submit-button" type="submit">
