@@ -19,7 +19,7 @@ describe("Planet Desktop", () => {
     const name = "saturn";
     const onClick = vitest.fn();
     render(<PlanetDesktop name={name} onClick={onClick} />);
-    const planetChild = screen.getByTestId("planet-desktop");
+    const planetChild = screen.getByTestId(`planet-desktop-${name}`);
     await user.click(planetChild);
     expect(onClick).toHaveBeenCalled();
   });
@@ -36,7 +36,7 @@ describe("Planet Desktop", () => {
         onMouseLeave={onMouseLeave}
       />
     );
-    const planetChild = screen.getByTestId("planet-desktop");
+    const planetChild = screen.getByTestId(`planet-desktop-${name}`);
     await user.hover(planetChild);
     expect(onMouseEnter).toHaveBeenCalledOnce();
     await user.unhover(planetChild);

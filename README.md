@@ -49,6 +49,7 @@ CSS Animation of the solar system stops on hover, in order to be able to choose 
 
 - [How to consume Rest APIs in React](https://www.freecodecamp.org/news/how-to-consume-rest-apis-in-react/)
 - [Passing data through React Router](https://dev.to/thatfemicode/passing-data-states-through-react-router-8dh#:~:text=Data%20known%20as%20state%20can,retrieved%20via%20the%20useLocation%20hook.)
+- [React testing library with Vitest](https://medium.com/@MussieTeshome/react-testing-library-with-vitest-the-basics-explained-d583e62945fd)
 - Book: "React Key Concepts" by Maximilian Schwarzmüller;
 
 ## 👧🏻 Author

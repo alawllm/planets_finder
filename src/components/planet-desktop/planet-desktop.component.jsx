@@ -5,7 +5,7 @@ const PlanetDesktop = ({ name, onClick, onMouseEnter, onMouseLeave }) => {
         className={`${name} planet-child`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
-        data-testid='planet-desktop'></div>
+        data-testid={`planet-desktop-${name}`}></div>
     </div>
   );
 };
