@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, test, expect, vitest } from "vitest";
+import { describe, test, expect} from "vitest";
 import user from "@testing-library/user-event";
 import { server } from "../../mocks/server";
 import { rest } from "msw";

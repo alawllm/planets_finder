@@ -22,7 +22,8 @@ After connecting with the API, the users are redirected to the planets info page
 - CSS animation of the solar system;
 - hover and focus states for the interactive elements on the page;
 
-CSS Animation of the solar system stops on hover, in order to be able to choose a planet. After clicking the chosen planet, a connection to the API is made with the name of the said planet. As the animation is concentrated in a circular orbit
+CSS Animation of the solar system stops on hover, in order to be able to choose a planet. After clicking the chosen planet, a connection to the API is made with the name of the said planet. As the animation is concentrated in a circular orbit.
+The app is tested in Vitest / React Testing Library.
 
 ## 👨‍💻 Built with
 
@@ -31,6 +32,7 @@ CSS Animation of the solar system stops on hover, in order to be able to choose 
 - React Router
 - CSS
 - Semantic HTML5 Markup
+- Testing: Vitest & React Testing Library
 
 ## 🖇️ Links
 
