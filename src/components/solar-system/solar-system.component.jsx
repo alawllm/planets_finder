@@ -99,7 +99,6 @@ console.log(planetName)
         </div>
         {/* on smaller devices a linear sequence of the planets appears
         for the purpose of better UX*/}
-        {/* to do - error on mobile  */}
         <div className="show-on-small-screen">
           {planetNames.map((planet) => (
             <PlanetMobile
