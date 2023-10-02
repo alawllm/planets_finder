@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import PlanetDesktop from "../planet-desktop/planet-desktop.component";
-import PlanetMobile from "../planet-mobile/planet-mobile.component";
-import SUN_DATA from "../../planet-configs/sunData";
-
 import "./solar-system.styles.css";
 import "./animation.styles.css";
+
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import SUN_DATA from "../../planet-configs/sunData";
+import PlanetDesktop from "../planet-desktop/planet-desktop.component";
+import PlanetMobile from "../planet-mobile/planet-mobile.component";
 
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState(false);
@@ -32,11 +33,13 @@ const SolarSystem = () => {
 
   const handleClick = (planetName) => {
     if (!planetName) return;
-console.log(planetName)
+    console.log(planetName);
     //request to the API is made with the name of the clicked planet
     const options = {
       method: "GET",
-      url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(planetName)}`,
+      url: `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(
+        planetName
+      )}`,
       headers: {
         "X-RapidAPI-Key": import.meta.env.VITE_APP_API_KEY,
         "X-RapidAPI-Host": "planets-info-by-newbapi.p.rapidapi.com",
@@ -46,14 +49,14 @@ console.log(planetName)
     async function fetchData() {
       //sun is not a star but I want it included for user experience, this is why it's a special case
       if (planetName === "sun") {
-        const infoObject = SUN_DATA
+        const infoObject = SUN_DATA;
         navigateTo("/info-page", { state: infoObject });
       } else {
         try {
           setError(null);
           const response = await axios.request(options);
           const infoObject = response.data;
-          console.log(infoObject)
+          console.log(infoObject);
           navigateTo("/info-page", { state: infoObject });
         } catch (error) {
           if (error.response.status === 502) {
