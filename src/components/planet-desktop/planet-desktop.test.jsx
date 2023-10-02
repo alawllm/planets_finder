@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { describe, test, expect, vitest } from "vitest";
 import user from "@testing-library/user-event";
+import { describe, expect, test, vitest } from "vitest";
+
 import PlanetDesktop from "./planet-desktop.component";
 
 describe("Planet Desktop", () => {

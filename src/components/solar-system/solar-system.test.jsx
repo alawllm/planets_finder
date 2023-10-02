@@ -1,9 +1,11 @@
-import { render, screen } from "@testing-library/react";
-import { describe, test, expect } from "vitest";
-import user from "@testing-library/user-event";
-import { server } from "../../mocks/server";
-import { rest } from "msw";
 import { MemoryRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
+import user from "@testing-library/user-event";
+import { rest } from "msw";
+import { describe, expect, test } from "vitest";
+
+import { server } from "../../mocks/server";
+
 import SolarSystem from "./solar-system.component";
 
 const planetNames = [
@@ -35,6 +37,7 @@ describe("Solar System", () => {
     });
     expect(planetCount).toBe(9);
   });
+
   test("renders planets correctly on mobile", () => {
     let planetCount = 0;
     render(
@@ -69,6 +72,7 @@ describe("Solar System", () => {
   });
 
   test("renders error when API is unreachable", async () => {
+    user.setup();
     server.use(
       rest.get(
         "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/6",
@@ -90,6 +94,7 @@ describe("Solar System", () => {
   });
 
   test("renders error in other cases", async () => {
+    user.setup();
     server.use(
       rest.get(
         "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/6",
@@ -111,6 +116,7 @@ describe("Solar System", () => {
   });
 
   test("does not render an error when it's not needed", async () => {
+    user.setup();
     server.use(
       rest.get(
         "https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/6",

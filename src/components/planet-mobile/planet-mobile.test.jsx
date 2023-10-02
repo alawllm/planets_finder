@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { describe, test, expect, vitest } from "vitest";
 import user from "@testing-library/user-event";
+import { describe, expect, test, vitest } from "vitest";
+
 import PlanetMobile from "./planet-mobile.component";
 
 describe("Planet Mobile", () => {
@@ -16,9 +17,9 @@ describe("Planet Mobile", () => {
   });
 
   test("handles onClick correctly", async () => {
+    user.setup();
     const name = "saturn";
     const onClick = vitest.fn();
-    user.setup();
     render(<PlanetMobile name={name} onClick={onClick} />);
     const planetContainer = screen.getByTestId(`planet-mobile-${name}`);
     await user.click(planetContainer);

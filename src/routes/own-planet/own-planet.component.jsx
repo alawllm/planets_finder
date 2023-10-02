@@ -120,7 +120,7 @@ const OwnPlanet = () => {
             feeling lucky?
           </button>
         </div>
-        <form className="planet-input-container" onSubmit={handleSubmit}>
+        <form className="planet-input-container" onSubmit={handleSubmit} data-testid="form-planet">
           <label className="header-type" htmlFor="planetName">
             type in planet name
           </label>
@@ -131,6 +131,7 @@ const OwnPlanet = () => {
             </div>
           )}
           <input
+            data-testid="input-planet"
             className="input-api"
             type="text"
             name="planetName"

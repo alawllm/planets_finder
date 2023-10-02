@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/info-paragraph/info-paragraph.component.jsx</title>
+    <title>Code coverage report for components/planet-desktop/planet-desktop.component.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/info-paragraph</a> info-paragraph.component.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">components/planet-desktop</a> planet-desktop.component.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -76,30 +76,30 @@
 <a name='L11'></a><a href='#L11'>11</a>
 <a name='L12'></a><a href='#L12'>12</a>
 <a name='L13'></a><a href='#L13'>13</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
+<span class="cline-any cline-yes">129x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import './info-paragraph.styles.css'
-&nbsp;
-const InfoParagraph = ({ label, content }) =&gt; {
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const PlanetDesktop = ({ name, onClick, onMouseEnter, onMouseLeave }) =&gt; {
   return (
-    &lt;&gt;
-      &lt;p className="info-text"&gt;{label}&lt;/p&gt;
-      &lt;p className="bigger-info-text"&gt;{content}&lt;/p&gt;
-    &lt;/&gt;
+    &lt;div className={`${name}-outline`} onClick={onClick}&gt;
+      &lt;div
+        className={`${name} planet-child`}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+        data-testid={`planet-desktop-${name}`}&gt;&lt;/div&gt;
+    &lt;/div&gt;
   );
 };
 &nbsp;
-export default InfoParagraph;
-&nbsp;</pre></td></tr></table></pre>
+export default PlanetDesktop;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
