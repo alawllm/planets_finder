@@ -1,13 +1,13 @@
-import "./solar-system.styles.css";
-import "./animation.styles.css";
-
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import SUN_DATA from "../../planet-configs/sunData";
 import PlanetDesktop from "../planet-desktop/planet-desktop.component";
 import PlanetMobile from "../planet-mobile/planet-mobile.component";
+
+import "./solar-system.styles.css";
+import "./animation.styles.css";
 
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState(false);
@@ -84,7 +84,7 @@ const SolarSystem = () => {
 
   return (
     <>
-      <div className="solarsystem-container">
+      <div className="solarsystem-container" data-testid="solar-system-component">
         {/* animation of the solar system shows only on bigger devices  */}
         <div className="hide-on-small-screen">
           {reversedPlanetNames.map((planet) => (

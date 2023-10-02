@@ -1,7 +1,8 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
+import Footer from "../../components/footer/footer.component";
 
 import "./navigation.styles.css";
-import Footer from "../../components/footer/footer.component";
 
 const Navigation = () => {
   return (

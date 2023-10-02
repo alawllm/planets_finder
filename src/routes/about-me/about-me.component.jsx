@@ -1,6 +1,6 @@
-import "./about-me.styles.css";
-
 import IconLink from "../../components/icon-link/icon-link.component";
+
+import "./about-me.styles.css";
 
 const About = () => {
   return (

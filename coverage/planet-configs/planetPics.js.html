@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for mocks/handlers.js</title>
+    <title>Code coverage report for planet-configs/planetPics.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">mocks</a> handlers.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">planet-configs</a> planetPics.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>22/40</span>
+                <span class='fraction'>40/40</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>22/40</span>
+                <span class='fraction'>40/40</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -123,66 +123,66 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { rest } from "msw";
-&nbsp;
-const planetNames = [
-  "sun",
-  "mercury",
-  "venus",
-  "earth",
-  "mars",
-  "jupiter",
-  "saturn",
-  "uranus",
-  "neptune",
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const PLANET_PICS = [
+  {
+    name: "sun",
+    picUrl: "https://i.ibb.co/zfNG13M/sun.webp",
+  },
+  {
+    name: "mercury",
+    picUrl: "https://i.ibb.co/mDPMGkx/mercury.webp",
+  },
+  {
+    name: "venus",
+    picUrl: "https://i.ibb.co/FHdjTgk/venus.webp",
+  },
+  {
+    name: "earth",
+    picUrl: "https://i.ibb.co/6NbvJwh/earth.webp",
+  },
+  {
+    name: "mars",
+    picUrl: "https://i.ibb.co/BrHGPtJ/mars.webp",
+  },
+  {
+    name: "jupiter",
+    picUrl: "https://i.ibb.co/3N06Vj4/jupiter.webp",
+  },
+  {
+    name: "saturn",
+    picUrl: "https://i.ibb.co/RPss8Hy/saturn.webp",
+  },
+  {
+    name: "uranus",
+    picUrl: "https://i.ibb.co/KF9fwk3/uranus.webp",
+  },
+  {
+    name: "neptune",
+    picUrl: "https://i.ibb.co/VM9kb9b/neptune.webp",
+  },
 ];
 &nbsp;
-export const handlers = [
-  rest.get(
-    `https://planets-info-by-newbapi.p.rapidapi.com/api/v1/planets/${planetNames.indexOf(
-      "saturn"
-    )}`,
-    (req, res, ctx) =&gt; {
-<span class="cstat-no" title="statement not covered" >      return res(</span>
-<span class="cstat-no" title="statement not covered" >        ctx.status(200),</span>
-<span class="cstat-no" title="statement not covered" >        ctx.json([</span>
-<span class="cstat-no" title="statement not covered" >          {</span>
-<span class="cstat-no" title="statement not covered" >            planetOrder: 6,</span>
-<span class="cstat-no" title="statement not covered" >            name: "saturn",</span>
-<span class="cstat-no" title="statement not covered" >            description:</span>
-<span class="cstat-no" title="statement not covered" >              "Saturn is a planet",</span>
-<span class="cstat-no" title="statement not covered" >            basicDetails: {</span>
-<span class="cstat-no" title="statement not covered" >              volume: `1.41 x 10^18 km^3`,</span>
-<span class="cstat-no" title="statement not covered" >              mass: "1.989 x 10^30 kg",</span>
-<span class="cstat-no" title="statement not covered" >            },</span>
-<span class="cstat-no" title="statement not covered" >            source: "Wikipedia",</span>
-<span class="cstat-no" title="statement not covered" >            wikiLink: "https://en.wikipedia.org/wiki/saturn",</span>
-<span class="cstat-no" title="statement not covered" >          },</span>
-<span class="cstat-no" title="statement not covered" >        ])</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-  ),
-];
+export default PLANET_PICS;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -190,7 +190,7 @@ export const handlers = [
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-10-02T09:27:08.503Z
+                at 2023-10-02T13:25:37.104Z
             </div>
         <script src="../prettify.js"></script>
         <script>

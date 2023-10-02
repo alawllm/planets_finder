@@ -1,6 +1,8 @@
 import { useLocation } from "react-router-dom";
+
 import InfoParagraph from "../../components/info-paragraph/info-paragraph.component";
 import PLANET_PICS from "../../planet-configs/planetPics";
+
 import "./info-page.styles.css";
 
 const InfoPage = () => {
@@ -14,7 +16,7 @@ const InfoPage = () => {
   return (
     <div className="info-container">
       <div className="left-part">
-        <h1 className="info-header"> here is {planetData.name}</h1>
+        <h1 className="info-header">here is {planetData.name}</h1>
         {
           <>
             {planetData.description && (
@@ -29,7 +31,7 @@ const InfoPage = () => {
             {planetData.basicDetails.volume && (
               <InfoParagraph
                 label={`${planetData.name}'s volume is around`}
-                content={`${planetData.basicDetails.volume} `}
+                content={`${planetData.basicDetails.volume}`}
               />
             )}
             {planetData.source && (

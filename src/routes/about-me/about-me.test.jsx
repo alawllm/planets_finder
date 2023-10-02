@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import { describe, test, expect } from "vitest";
-import About from "./about-me.component";
 import { MemoryRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
+import { describe, expect,test } from "vitest";
+
+import About from "./about-me.component";
 
 describe("About me", () => {
   test("renders correctly", () => {

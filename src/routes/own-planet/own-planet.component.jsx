@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import axios from "axios";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import SUN_DATA from "../../planet-configs/sunData";
 
 import "./own-planet.styles.css";
@@ -102,7 +103,9 @@ const OwnPlanet = () => {
 
   useEffect(() => {
     const container = document.querySelector(".planet-input-container");
-    const focus = () => {inputRef.current.focus()};
+    const focus = () => {
+      inputRef.current.focus();
+    };
     container.addEventListener("click", focus);
     return () => {
       container.removeEventListener("click", focus);
