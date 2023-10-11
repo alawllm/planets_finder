@@ -47,7 +47,7 @@ const SolarSystem = () => {
     };
 
     async function fetchData() {
-      //sun is not a star but I want it included for user experience, this is why it's a special case
+      //sun is not a planet but I want it included for user experience, this is why it's a special case
       if (planetName === "sun") {
         const infoObject = SUN_DATA;
         navigateTo("/info-page", { state: infoObject });
@@ -84,7 +84,9 @@ const SolarSystem = () => {
 
   return (
     <>
-      <div className="solarsystem-container" data-testid="solar-system-component">
+      <div
+        className="solarsystem-container"
+        data-testid="solar-system-component">
         {/* animation of the solar system shows only on bigger devices  */}
         <div className="hide-on-small-screen">
           {reversedPlanetNames.map((planet) => (
