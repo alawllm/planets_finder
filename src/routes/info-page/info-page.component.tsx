@@ -5,11 +5,16 @@ import PLANET_PICS from "../../planet-configs/planetPics";
 
 import "./info-page.styles.css";
 
-const InfoPage = () => {
+type PlanetPic = {
+  name: string;
+  picUrl: string;
+};
+
+const InfoPage: React.FC = () => {
   let location = useLocation();
   const planetData = location.state;
   //images for the solar system
-  let planetPic = PLANET_PICS.find(
+  let planetPic: PlanetPic | undefined = PLANET_PICS.find(
     (planet) => planet.name === planetData.name.toLowerCase()
   );
 
@@ -47,7 +52,7 @@ const InfoPage = () => {
       <div className="right-part">
         <img
           className="planet-image"
-          src={planetPic.picUrl}
+          src={planetPic?.picUrl}
           alt={`${planetData.name}`}
         />
       </div>

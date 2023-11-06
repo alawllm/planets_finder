@@ -4,7 +4,7 @@ import Footer from "../../components/footer/footer.component";
 
 import "./navigation.styles.css";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   return (
     <>
       <div className="navigation">

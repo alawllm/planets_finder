@@ -7,12 +7,12 @@ import SUN_DATA from "../../planet-configs/sunData";
 import "./own-planet.styles.css";
 
 //later add proper error handling of the input
-const OwnPlanet = () => {
-  const [planetName, setPlanetName] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+const OwnPlanet: React.FC = () => {
+  const [planetName, setPlanetName] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const planetNames = [
     "sun",
@@ -28,12 +28,12 @@ const OwnPlanet = () => {
 
   const navigateTo = useNavigate();
 
-  const handleChange = (evt) => {
+  const handleChange = (evt: any) => {
     setPlanetName(evt.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (evt: any) => {
+    evt.preventDefault();
     setIsLoading(true);
     setError(null);
 
@@ -59,7 +59,7 @@ const OwnPlanet = () => {
           const response = await axios.request(options);
           const infoObject = response.data;
           navigateTo("/info-page", { state: infoObject });
-        } catch (error) {
+        } catch (error: any) {
           if (error.response.status === 502) {
             setError("sorry, the API is unreachable.");
           } else if (error.response.status !== 502 && error.response.status) {
@@ -90,7 +90,7 @@ const OwnPlanet = () => {
         const response = await axios.request(options);
         const infoObject = response.data;
         navigateTo("/info-page", { state: infoObject });
-      } catch (error) {
+      } catch (error: any) {
         if (error.response.status === 502) {
           setError("sorry, the API is unreachable.");
         } else if (error.response.status !== 502 && error.response.status) {
@@ -102,13 +102,20 @@ const OwnPlanet = () => {
   };
 
   useEffect(() => {
-    const container = document.querySelector(".planet-input-container");
+    const container: HTMLElement | null = document.querySelector(
+      ".planet-input-container"
+    );
+    if (!container) {
+      return;
+    }
     const focus = () => {
-      inputRef.current.focus();
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     };
-    container.addEventListener("click", focus);
+    container?.addEventListener("click", focus);
     return () => {
-      container.removeEventListener("click", focus);
+      container?.removeEventListener("click", focus);
     };
   }, []);
 
@@ -120,7 +127,10 @@ const OwnPlanet = () => {
             feeling lucky?
           </button>
         </div>
-        <form className="planet-input-container" onSubmit={handleSubmit} data-testid="form-planet">
+        <form
+          className="planet-input-container"
+          onSubmit={handleSubmit}
+          data-testid="form-planet">
           <label className="header-type" htmlFor="planetName">
             type in planet name
           </label>

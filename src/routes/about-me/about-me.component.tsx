@@ -2,7 +2,7 @@ import IconLink from "../../components/icon-link/icon-link.component";
 
 import "./about-me.styles.css";
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <>
       <div className="about-content-container">
