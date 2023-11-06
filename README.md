@@ -33,10 +33,11 @@ The app is tested in Vitest / React Testing Library.
 - CSS
 - Semantic HTML5 Markup
 - Testing: Vitest & React Testing Library
+- TypeScript
 
 ## 🖇️ Links
 
-- Solution URL: [GitHub](https://github.com/alawllm/planets_finder)
+- Code URL: [GitHub](https://github.com/alawllm/planets_finder)
 - Live URL: [https://planets-info-app.netlify.app]
 
 ## 💅 Styles / fonts

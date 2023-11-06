@@ -9,12 +9,14 @@ import PlanetMobile from "../planet-mobile/planet-mobile.component";
 import "./solar-system.styles.css";
 import "./animation.styles.css";
 
-const SolarSystem = () => {
-  const [hoveredPlanet, setHoveredPlanet] = useState(false);
-  const [error, setError] = useState(null);
+type PlanetName = string;
+
+const SolarSystem: React.FC = () => {
+  const [hoveredPlanet, setHoveredPlanet] = useState<PlanetName | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   //array with planet names needed to show the name when hovered
-  const planetNames = [
+  const planetNames: PlanetName[] = [
     "sun",
     "mercury",
     "venus",
@@ -31,7 +33,7 @@ const SolarSystem = () => {
 
   const navigateTo = useNavigate();
 
-  const handleClick = (planetName) => {
+  const handleClick = (planetName: PlanetName) => {
     if (!planetName) return;
     console.log(planetName);
     //request to the API is made with the name of the clicked planet
@@ -58,11 +60,11 @@ const SolarSystem = () => {
           const infoObject = response.data;
           console.log(infoObject);
           navigateTo("/info-page", { state: infoObject });
-        } catch (error) {
-          if (error.response.status === 502) {
+        } catch (err: any) {
+          if (err.response.status === 502) {
             setError("sorry, the API is unreachable.");
             setHoveredPlanet(null);
-          } else if (error.response.status !== 502 && error.response.status) {
+          } else if (err.response.status !== 502 && err.response.status) {
             setError("sorry, an error occured.");
             setHoveredPlanet(null);
           }
@@ -73,7 +75,7 @@ const SolarSystem = () => {
   };
 
   //set state with the name of the hovered planet in order to be able to send API request
-  const onHover = (planetName) => {
+  const onHover = (planetName: PlanetName) => {
     setHoveredPlanet(planetName);
     setError(null);
   };
@@ -96,7 +98,6 @@ const SolarSystem = () => {
               onClick={() => handleClick(planet)}
               onMouseEnter={() => onHover(planet)}
               onMouseLeave={onLeave}
-              isHovered={hoveredPlanet === planet}
             />
           ))}
           {error && <p className="error-text-solar-system">{error}</p>}

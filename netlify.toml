@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "/own-planet"
+  to = "/own-planet"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about"
+  status = 200
+
+  [[redirects]]
+  from = "/"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200

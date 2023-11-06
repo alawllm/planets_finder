@@ -1,4 +1,9 @@
-export const PlanetMobile = ({ name, onClick }) => {
+type PlanetMobileProps = {
+  name: string;
+  onClick: () => void;
+};
+
+const PlanetMobile: React.FC<PlanetMobileProps> = ({ name, onClick }) => {
   return (
     <>
       <div

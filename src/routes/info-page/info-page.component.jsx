@@ -45,13 +45,11 @@ const InfoPage = () => {
         }
       </div>
       <div className="right-part">
-        {planetPic && (
-          <img
-            className="planet-image"
-            src={planetPic.picUrl}
-            alt={`${planetData.name}`}
-          />
-        )}
+        <img
+          className="planet-image"
+          src={planetPic.picUrl}
+          alt={`${planetData.name}`}
+        />
       </div>
     </div>
   );
